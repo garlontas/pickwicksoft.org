@@ -1,0 +1,25 @@
+---
+import '@fontsource-variable/space-grotesk';
+import '@fontsource-variable/nunito';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Intro from "../components/Intro.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="flex flex-col gap-y-9">
+			<Intro></Intro>
+			<Projects></Projects>
+		</main>
+		<Footer />
+	</body>
+</html>

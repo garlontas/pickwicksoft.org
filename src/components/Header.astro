@@ -1,0 +1,24 @@
+---
+import LogoLink from "./LogoLink.astro";
+import Navigation from "./Navigation.astro";
+---
+
+<header class="bg-white absolute top-0 left-0 w-full">
+	<nav class="mx-auto flex max-w-7xl items-start justify-between p-4 lg:px-6">
+		<LogoLink href="/"></LogoLink>
+		<button class="text-4xl text-accent" menu-link>Menu</button>
+	</nav>
+</header>
+<Navigation></Navigation>
+<script>
+	const menuLink = document.querySelector('[menu-link]');
+	const menu = document.querySelector('[menu]');
+	const closeMenu = document.querySelector('[close-menu]');
+
+	menuLink.addEventListener('click', () => {
+		menu.classList.toggle('open');
+	});
+	closeMenu.addEventListener('click', () => {
+		menu.classList.toggle('open');
+	});
+</script>
