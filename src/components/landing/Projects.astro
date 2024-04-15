@@ -1,15 +1,12 @@
 ---
-import ProjectCard from "./ProjectCard.astro";
-import { getCollection } from 'astro:content';
-import SectionHeading from "../reuseable/SectionHeading.astro";
+import ProjectCard from './ProjectCard.astro'
+import { getCollection } from 'astro:content'
+import SectionHeading from '../reuseable/SectionHeading.astro'
 
-const allProjects = await getCollection('project');
+const allProjects = await getCollection('project')
 ---
-<SectionHeading title="Things I built."/>
+
+<SectionHeading title="Things I built." />
 <div class="grid grid-cols-2 gap-9">
-    {
-        allProjects.map((project) => (
-            <ProjectCard project={project} />
-        ))
-    }
+	{allProjects.map((project) => <ProjectCard project={project} />)}
 </div>

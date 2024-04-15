@@ -1,25 +1,28 @@
 ---
-
-import HeaderLink from "./HeaderLink.astro";
+import HeaderLink from './HeaderLink.astro'
 ---
 
-<div menu class="menu transition-opacity duration-300 w-full overflow-hidden fixed left-0 top-0 bg-primary p-4 lg:px-6 text-accent">
-    <div class="flex justify-end max-w-7xl mx-auto">
-        <button class="text-4xl text-white" close-menu>Close Menu</button>
-    </div>
-    <div class="flex flex-col gap-y-10 justify-center items-center h-full">
-        <HeaderLink href="/" class="text-6xl text-white">home.</HeaderLink>
-        <HeaderLink href="/projects" class="text-6xl text-white">projects.</HeaderLink>
-        <HeaderLink href="/blog" class="text-6xl text-white">blog.</HeaderLink>
-        <HeaderLink href="/about" class="text-6xl text-white">about me.</HeaderLink>
-        <HeaderLink href="/contact" class="text-6xl text-white">contact me.</HeaderLink>
-    </div>
+<div
+	menu
+	class="menu text-accent fixed left-0 top-0 w-full overflow-hidden bg-primary p-4 transition-opacity duration-300 lg:px-6"
+>
+	<div class="mx-auto flex max-w-7xl justify-end">
+		<button class="text-4xl text-white" close-menu>Close Menu</button>
+	</div>
+	<div class="flex h-full flex-col items-center justify-center gap-y-10">
+		<HeaderLink href="/" class="text-6xl text-white">home.</HeaderLink>
+		<HeaderLink href="/projects" class="text-6xl text-white">projects.</HeaderLink>
+		<HeaderLink href="/blog" class="text-6xl text-white">blog.</HeaderLink>
+		<HeaderLink href="/about" class="text-6xl text-white">about me.</HeaderLink>
+		<HeaderLink href="/contact" class="text-6xl text-white">contact me.</HeaderLink>
+	</div>
 </div>
 <style>
-    .menu {
-        @apply opacity-0 h-0
-    }
-    .menu.open {
-        @apply opacity-100 h-screen
-    }
+	.menu {
+		@apply h-0 opacity-0;
+	}
+
+	.menu.open {
+		@apply h-screen opacity-100;
+	}
 </style>

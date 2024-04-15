@@ -1,14 +1,14 @@
 ---
 import LogoLink from './reuseable/LogoLink.astro'
-import SocialButton from "./reuseable/SocialButton.astro";
-import {Icon} from "astro-icon/components";
+import SocialButton from './reuseable/SocialButton.astro'
+import { Icon } from 'astro-icon/components'
 const today = new Date()
 ---
 
-<footer class="py-5 bg-primary text-white">
+<footer class="bg-primary py-5 text-white">
 	<div class="mx-auto max-w-7xl">
 		<div class="flex justify-between px-4">
-			<div class="max-w-lg flex flex-col gap-y-5">
+			<div class="flex max-w-lg flex-col gap-y-5">
 				<LogoLink href="/" class="flex-none text-white" />
 				<p class="text-xl">
 					Romanian freelancer, open source developer and student living in Germany. Driven by my
@@ -23,7 +23,7 @@ const today = new Date()
 					<a href="/about" class="text-xl text-white">about me.</a>
 					<a href="/contact" class="text-xl text-white">contact me.</a>
 				</div>
-				<div class="flex h-full justify-end items-end gap-x-9">
+				<div class="flex h-full items-end justify-end gap-x-9">
 					<SocialButton>
 						<Icon name="linkedin" />
 					</SocialButton>
