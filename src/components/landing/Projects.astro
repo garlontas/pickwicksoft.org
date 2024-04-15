@@ -1,10 +1,11 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
 import { getCollection } from 'astro:content';
+import SectionHeading from "../reuseable/SectionHeading.astro";
 
 const allProjects = await getCollection('project');
 ---
-<h2 class="text-6xl text-accent">Things I built.</h2>
+<SectionHeading title="Things I built."/>
 <div class="grid grid-cols-2 gap-9">
     {
         allProjects.map((project) => (

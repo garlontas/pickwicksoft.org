@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import {SITE_SLOGAN} from "../../consts";
+
+type Props = HTMLAttributes<'a'>;
+
+const { href, class: className, ...props } = Astro.props;
+---
+
+<h2 class:list={['text-black text-accent w-min', className]}>
+    <a class="" href={href}>
+        <p class="text-4xl"><span class:list={['text-primary', className]}>p</span>ickwicksoft.</p>
+        <p class="text-xl text-right leading-3">{SITE_SLOGAN}</p>
+    </a>
+</h2>

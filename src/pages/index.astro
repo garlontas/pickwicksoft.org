@@ -1,12 +1,15 @@
 ---
 import '@fontsource-variable/space-grotesk';
 import '@fontsource-variable/nunito';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import Intro from "../components/Intro.astro";
-import Projects from "../components/Projects.astro";
+import BaseHead from '../components/head/BaseHead.astro';
+import Header from '../components/head/Header.astro';
+import Intro from "../components/landing/Intro.astro";
+import Projects from "../components/landing/Projects.astro";
+import BlogSnippets from "../components/landing/BlogSnippets.astro";
+import Services from "../components/landing/Services.astro";
+import Footer from '../components/Footer.astro';
+import AboutMeMarquee from "../components/landing/AboutMeMarquee.astro";
 ---
 
 <!doctype html>
@@ -16,9 +19,12 @@ import Projects from "../components/Projects.astro";
 	</head>
 	<body>
 		<Header />
-		<main class="flex flex-col gap-y-9">
+		<main class="flex flex-col gap-y-9 mb-9">
 			<Intro></Intro>
 			<Projects></Projects>
+			<BlogSnippets></BlogSnippets>
+			<Services></Services>
+			<AboutMeMarquee></AboutMeMarquee>
 		</main>
 		<Footer />
 	</body>

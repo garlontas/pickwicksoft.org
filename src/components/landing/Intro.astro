@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon/components'
+import SocialButton from "../reuseable/SocialButton.astro";
+import Button from "../reuseable/Button.astro";
+---
+
+<div class="max-w-3xl flex flex-col gap-y-8">
+    <h1 class="text-6xl text-accent"><span class="highlight">Creative developer</span> and freelancer based in Munich.</h1>
+    <p class="text-4xl">Romanian freelancer, open source developer, creator of pystreamapi and student living in Germany. Driven by my passion for good software I build client and open source software.</p>
+    <div class="flex flex-row gap-x-4 items-center">
+        <Button href="/about" title="More about me" action="primary"></Button>
+        <span class="w-16 h-[2px] bg-black"></span>
+        <SocialButton>
+            <Icon name="github" />
+        </SocialButton>
+        <SocialButton>
+            <Icon name="linkedin" />
+        </SocialButton>
+    </div>
+</div>
