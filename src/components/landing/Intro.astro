@@ -4,22 +4,26 @@ import SocialButton from '../reuseable/SocialButton.astro'
 import Button from '../reuseable/Button.astro'
 ---
 
-<div class="flex max-w-3xl flex-col gap-y-8">
-	<h1 class="text-accent text-6xl">
-		<span class="highlight">Creative developer</span> and freelancer based in Munich.
-	</h1>
-	<p class="text-4xl">
-		Romanian freelancer, open source developer, creator of pystreamapi and student living in
-		Germany. Driven by my passion for good software I build client and open source software.
-	</p>
-	<div class="flex flex-row items-center gap-x-4">
-		<Button href="/about" title="More about me" action="primary" />
-		<span class="h-[2px] w-16 bg-black"></span>
-		<SocialButton>
-			<Icon name="github" />
-		</SocialButton>
-		<SocialButton>
-			<Icon name="linkedin" />
-		</SocialButton>
+<div class="relative">
+	<div class="absolute -right-24 -top-[30%] h-[110%] w-1/3 bg-primary bg-opacity-10"></div>
+	<div class="absolute -right-24 -top-[30%] h-[130%] w-1/4 bg-primary bg-opacity-10"></div>
+	<div class="flex max-w-3xl flex-col gap-y-8">
+		<h1 class="text-accent text-6xl">
+			<span class="highlight">Creative developer</span> and freelancer based in Munich.
+		</h1>
+		<p class="text-4xl leading-snug">
+			Romanian freelancer, open source developer, creator of pystreamapi and student living in
+			Germany. Driven by my passion for good software I build client and open source software.
+		</p>
+		<div class="flex flex-row items-center gap-x-4">
+			<Button href="/about" title="More about me" action="primary" />
+			<span class="h-[2px] w-16 bg-black"></span>
+			<SocialButton>
+				<Icon name="github" />
+			</SocialButton>
+			<SocialButton>
+				<Icon name="linkedin" />
+			</SocialButton>
+		</div>
 	</div>
 </div>
