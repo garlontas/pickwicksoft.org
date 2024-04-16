@@ -2,6 +2,11 @@
 const { href } = Astro.props
 ---
 
-<a href={href} target="_blank" class="bg-black px-6 py-5 text-4xl text-white">
+<a
+	href={href}
+	target="_blank"
+	class="bg-black px-6 py-5 text-4xl text-white"
+	aria-label="Social link"
+>
 	<slot />
 </a>

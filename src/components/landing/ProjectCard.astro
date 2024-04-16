@@ -1,5 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+
 interface Props {
 	project: CollectionEntry<'project'>
 }
@@ -16,5 +18,5 @@ const { project } = Astro.props
 	<ul class="flex flex-wrap gap-3 *:rounded-full *:bg-primary *:bg-opacity-10 *:px-4">
 		{project.data.tags.map((tag) => <li>{tag}</li>)}
 	</ul>
-	<img src={project.data.image} />
+	<Image src={project.data.image} width="500px" height="300px" alt={project.data.title} />
 </div>
