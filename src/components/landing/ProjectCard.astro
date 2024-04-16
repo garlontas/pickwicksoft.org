@@ -15,8 +15,14 @@ const { project } = Astro.props
 		<span class="h-[2px] w-full bg-black"></span>
 	</div>
 	<p class="text-xl">{project.data.description}</p>
-	<ul class="flex flex-wrap gap-3 *:rounded-full *:bg-primary *:bg-opacity-10 *:px-4">
+	<ul class="flex flex-wrap gap-3 *:rounded-full *:bg-primary *:bg-opacity-10 *:px-3 *:py-1">
 		{project.data.tags.map((tag) => <li>{tag}</li>)}
 	</ul>
-	<Image src={project.data.image} width="500px" height="300px" alt={project.data.title} />
+	<Image
+		src={project.data.image}
+		width="500px"
+		height="300px"
+		alt={project.data.title}
+		class="h-auto w-full"
+	/>
 </div>

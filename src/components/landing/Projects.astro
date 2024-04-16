@@ -6,7 +6,9 @@ import SectionHeading from '../reuseable/SectionHeading.astro'
 const allProjects = await getCollection('project')
 ---
 
-<SectionHeading title="Things I built." />
-<div class="grid grid-cols-2 gap-9">
-	{allProjects.map((project) => <ProjectCard project={project} />)}
+<div class="flex flex-col gap-y-9">
+	<SectionHeading title="Things I built." />
+	<div class="grid grid-cols-1 gap-9 md:grid-cols-2">
+		{allProjects.map((project) => <ProjectCard project={project} />)}
+	</div>
 </div>

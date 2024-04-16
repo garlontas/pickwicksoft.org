@@ -3,28 +3,32 @@ import SectionHeading from '../reuseable/SectionHeading.astro'
 import Button from '../reuseable/Button.astro'
 ---
 
-<SectionHeading title="Services I offer." />
-<div class="flex gap-x-9">
-	<div class="flex w-1/2 flex-col gap-y-3">
-		<h3 class="font-bold">
-			<span class="highlight">Your needs, your solution</span>
-		</h3>
-		<p>
-			Whether you need a new website, a custom software solution for your business or a project
-			administrator, I’ll cover it all. With over 5 years of experience in software development and
-			project management I build software that covers all your needs.
-		</p>
-		<ul class="list-inside list-[square] marker:text-primary">
-			<li>I’ll offer you different possible solutions.</li>
-			<li>I’ll use modern and fast technology.</li>
-			<li>I’ll retain best practices.</li>
-			<li>I’ll provide support and administration.</li>
-		</ul>
-	</div>
-	<div
-		class="flex w-1/2 flex-col items-center justify-center gap-y-3 bg-primary bg-opacity-20 px-9"
-	>
-		<h3 class="text-accent text-center text-5xl text-black">Want a free consultation?</h3>
-		<Button href="/contact" title="Contact Me" />
+<div class="flex flex-col gap-y-9">
+	<SectionHeading title="Services I offer." />
+	<div class="flex flex-col gap-9 md:flex-row">
+		<div class="flex w-full flex-col gap-3 md:w-1/2">
+			<h3 class="font-bold">
+				<span class="highlight">Your needs, your solution</span>
+			</h3>
+			<p>
+				Whether you need a new website, a custom software solution for your business or a project
+				administrator, I’ll cover it all. With over 5 years of experience in software development
+				and project management I build software that covers all your needs.
+			</p>
+			<ul class="list-inside list-[square] marker:text-primary">
+				<li>I’ll offer you different possible solutions.</li>
+				<li>I’ll use modern and fast technology.</li>
+				<li>I’ll retain best practices.</li>
+				<li>I’ll provide support and administration.</li>
+			</ul>
+		</div>
+		<div
+			class="flex w-full flex-col items-center justify-center gap-y-3 bg-primary bg-opacity-20 p-9 md:w-1/2"
+		>
+			<h3 class="text-accent mx-16 text-center text-3xl text-black sm:text-4xl">
+				Want a free consultation?
+			</h3>
+			<Button class="text-3xl sm:text-4xl" href="/contact" title="Contact Me" />
+		</div>
 	</div>
 </div>
