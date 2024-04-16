@@ -1,7 +1,7 @@
 ---
-const { text } = Astro.props
+const { href } = Astro.props
 ---
 
-<button class="bg-black px-6 py-5 text-4xl text-white">
+<a href={href} target="_blank" class="bg-black px-6 py-5 text-4xl text-white">
 	<slot />
-</button>
+</a>
