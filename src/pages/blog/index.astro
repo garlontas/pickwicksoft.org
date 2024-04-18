@@ -7,6 +7,11 @@ import Footer from '../../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
 import { getCollection } from 'astro:content'
 import FormattedDate from '../../components/reuseable/FormattedDate.astro'
+import Button from '../../components/reuseable/Button.astro'
+import Intro from '../../components/landing/Intro.astro'
+import SocialButton from '../../components/reuseable/SocialButton.astro'
+import { Icon } from 'astro-icon/components'
+import SelectTag from '../../components/blog/SelectTag.astro'
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -20,28 +25,41 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 	<body>
 		<Header />
-		<main>
-			<section>
+		<main class="mb-9 flex flex-col gap-y-14">
+			<Intro>
 				<h1 class="text-accent text-6xl">
-					Go ahead and read my latest blog posts about technology, open source, freelancing and
-					more.
+					<span class="highlight">Go ahead and read</span> my latest blog posts about technology, open
+					source, freelancing and more.
 				</h1>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
+				<div>
+					<Button href="/about" title="Who is writing this" />
+				</div>
+			</Intro>
+			<SelectTag tags={posts.flatMap((post) => post.data.tags)} />
+			<div class="grid grid-cols-1 gap-9 sm:grid-cols-2 md:grid-cols-3">
+				{
+					posts.map((post) => (
+						<a href={`/blog/${post.slug}/`} class="group relative flex flex-col gap-2">
+							<div class="w-full max-w-full overflow-hidden">
+								<img
+									width="100%"
+									height={500}
+									src={post.data.heroImage}
+									alt=""
+									class="transition-all group-hover:scale-110"
+								/>
+							</div>
+							<p class="text-accent text-primary">{post.data.tags.join(', ')}</p>
+							<h3 class="text-xl font-bold group-hover:underline">{post.data.title}</h3>
+							<p class="line-clamp-4 group-hover:underline">{post.data.description}</p>
+							<p class="mb-3 text-gray-500">
+								<FormattedDate date={post.data.pubDate} />
+							</p>
+							<div class="absolute -right-2 bottom-0 h-24 w-32 rounded-tl-full bg-primary bg-opacity-20" />
+						</a>
+					))
+				}
+			</div>
 		</main>
 		<Footer />
 	</body>

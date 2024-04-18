@@ -3,6 +3,7 @@ title: 'Effective Strategies for Debugging Your Code'
 description: 'Debugging is an essential skill for every programmer. In this blog post, well discuss effective strategies and techniques for identifying and fixing bugs in your code, helping you become a more proficient and confident developer.'
 pubDate: 'Jul 22 2022'
 heroImage: '/blog-placeholder-2.jpg'
+tags: ['Programming']
 ---
 
 1. **Understand the Bug:** The first step in debugging is understanding the bug. Reproduce the issue and gather
