@@ -3,14 +3,15 @@ import { getCollection } from 'astro:content'
 import FormattedDate from '../reuseable/FormattedDate.astro'
 import Chips from '../reuseable/Chips.astro'
 import WorkExperienceContent from './WorkExperienceContent.astro'
+import SectionHeading from '../reuseable/SectionHeading.astro'
 
 const works = (await getCollection('work')).sort(
 	(a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf()
 )
 ---
 
-<h2 class="text-accent text-6xl">Work experience.</h2>
 <div>
+	<SectionHeading class="mb-9" title="Work experience." />
 	<div class="mb-4">
 		<ul
 			class="-mb-px flex flex-wrap justify-center gap-3 text-center"

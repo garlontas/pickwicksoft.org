@@ -2,6 +2,7 @@
 import SectionHeading from '../reuseable/SectionHeading.astro'
 import { getCollection } from 'astro:content'
 import FormattedDate from '../reuseable/FormattedDate.astro'
+import Link from '../reuseable/Link.astro'
 
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -30,8 +31,6 @@ const posts = (await getCollection('blog'))
 				))
 			}
 		</div>
-		<a class="font-bold" href="/blog/">
-			<span class="highlight">View all posts</span>
-		</a>
+		<Link href="/blog/" name="View all posts" />
 	</div>
 </div>

@@ -34,4 +34,13 @@ const work = defineCollection({
 	})
 })
 
-export const collections = { blog, project, work }
+const skill = defineCollection({
+	type: 'data',
+	schema: z.object({
+		name: z.string(),
+		level: z.number(),
+		category: z.string()
+	})
+})
+
+export const collections = { blog, project, work, skill }
