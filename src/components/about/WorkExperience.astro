@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content'
+import FormattedDate from '../reuseable/FormattedDate.astro'
+import Chips from '../reuseable/Chips.astro'
+import WorkExperienceContent from './WorkExperienceContent.astro'
+
+const works = (await getCollection('work')).sort(
+	(a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf()
+)
+---
+
+<h2 class="text-accent text-6xl">Work experience.</h2>
+<div>
+	<div class="mb-4">
+		<ul
+			class="-mb-px flex flex-wrap justify-center gap-3 text-center"
+			id="default-tab"
+			data-tabs-toggle="#default-tab-content"
+			role="tablist"
+			data-tabs-active-classes="bg-primary bg-opacity-10 text-black"
+			data-tabs-inactive-classes="bg-white text-black"
+		>
+			{
+				works.map((work) => (
+					<li role="presentation">
+						<button
+							class="inline-block px-3 py-2 !text-black hover:bg-violet-50 aria-selected:bg-primary aria-selected:bg-opacity-10 aria-selected:text-black"
+							id={work.slug + '-tab'}
+							data-tabs-target={'#' + work.slug}
+							type="button"
+							role="tab"
+							aria-controls={work.slug}
+							aria-selected="false"
+						>
+							{work.data.title}
+						</button>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+	<div id="default-tab-content">
+		{
+			works.map((work) => (
+				<div class="hidden" id={work.slug} role="tabpanel" aria-labelledby={work.slug + '-tab'}>
+					<div class="flex gap-9">
+						<div class="flex w-1/3 flex-col gap-3">
+							<div class="flex flex-col">
+								<div class="flex gap-3">
+									<FormattedDate date={work.data.startDate} /> -{' '}
+									{(work.data.endDate && <FormattedDate date={work.data.endDate} />) || 'Present'}
+								</div>
+								<h3 class="text-primary">{work.data.company}</h3>
+							</div>
+							<div class="flex flex-col gap-3">
+								<h4>Technologies:</h4>
+								<Chips data={work.data.technologies} />
+							</div>
+						</div>
+						<div class="work w-2/3">
+							<WorkExperienceContent work={work} />
+						</div>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</div>

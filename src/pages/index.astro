@@ -1,54 +1,41 @@
 ---
 import '@fontsource-variable/space-grotesk'
 import '@fontsource-variable/nunito'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import BaseHead from '../components/head/BaseHead.astro'
-import Header from '../components/head/Header.astro'
-import Intro from '../components/landing/Intro.astro'
+import Intro from '../components/reuseable/Intro.astro'
 import Projects from '../components/landing/Projects.astro'
 import BlogSnippets from '../components/landing/BlogSnippets.astro'
 import Services from '../components/landing/Services.astro'
 import AboutMeMarquee from '../components/landing/AboutMeMarquee.astro'
-import Footer from '../components/Footer.astro'
 import Button from '../components/reuseable/Button.astro'
 import SocialButton from '../components/reuseable/SocialButton.astro'
 import { Icon } from 'astro-icon/components'
+import ContentPage from '../layouts/ContentPage.astro'
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main class="mb-9 flex flex-col gap-y-14">
-			<Intro>
-				<h1 class="text-accent text-6xl">
-					<span class="highlight">Creative developer</span> and freelancer based in Munich.
-				</h1>
-				<p class="text-4xl leading-snug">
-					Romanian freelancer, open source developer, creator of pystreamapi and student living in
-					Germany. Driven by my passion for good software I build client and open source software.
-				</p>
-				<div class="flex flex-col items-start gap-4 sm:flex-row">
-					<Button href="/about" title="More about me" action="primary" />
-					<div class="flex items-center gap-x-4">
-						<span class="h-[2px] w-16 bg-black"></span>
-						<SocialButton href="https://github.com/PickwickSoft/">
-							<Icon name="github" />
-						</SocialButton>
-						<SocialButton href="https://de.linkedin.com/in/stefan-garlonta">
-							<Icon name="linkedin" />
-						</SocialButton>
-					</div>
-				</div>
-			</Intro>
-			<Projects />
-			<BlogSnippets />
-			<Services />
-			<AboutMeMarquee />
-		</main>
-		<Footer />
-	</body>
-</html>
+<ContentPage>
+	<Intro>
+		<h1 class="text-accent text-6xl">
+			<span class="highlight">Creative developer</span> and freelancer based in Munich.
+		</h1>
+		<p class="text-4xl leading-snug">
+			Romanian freelancer, open source developer, creator of pystreamapi and student living in
+			Germany. Driven by my passion for good software I build client and open source software.
+		</p>
+		<div class="flex flex-col items-start gap-4 sm:flex-row">
+			<Button href="/about" title="More about me" action="primary" />
+			<div class="flex items-center gap-x-4">
+				<span class="h-[2px] w-16 bg-black"></span>
+				<SocialButton href="https://github.com/PickwickSoft/">
+					<Icon name="github" />
+				</SocialButton>
+				<SocialButton href="https://de.linkedin.com/in/stefan-garlonta">
+					<Icon name="linkedin" />
+				</SocialButton>
+			</div>
+		</div>
+	</Intro>
+	<Projects />
+	<BlogSnippets />
+	<Services />
+	<AboutMeMarquee />
+</ContentPage>

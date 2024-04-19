@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content'
+type Props = CollectionEntry<'work'>
+const { work } = Astro.props
+const { Content } = await work.render()
+---
+
+<Content />
+<style is:global>
+	.work > ul {
+		@apply list-inside list-[square] marker:text-primary;
+	}
+
+	.work > p {
+		@apply mb-2;
+	}
+
+	.work > p > br {
+		content: '';
+		@apply mb-1 block;
+	}
+</style>

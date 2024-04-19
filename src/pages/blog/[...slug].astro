@@ -3,6 +3,7 @@ import '@fontsource-variable/space-grotesk'
 import '@fontsource-variable/nunito'
 import { type CollectionEntry, getCollection } from 'astro:content'
 import BlogPost from '../../layouts/BlogPost.astro'
+import Recipe from '../../components/reuseable/Recipe.astro'
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog')
@@ -18,5 +19,7 @@ const { Content } = await post.render()
 ---
 
 <BlogPost {...post.data}>
-	<Content />
+	<Recipe>
+		<Content />
+	</Recipe>
 </BlogPost>

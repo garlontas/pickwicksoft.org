@@ -1,0 +1,22 @@
+---
+import Footer from '../components/Footer.astro'
+import BaseHead from '../components/head/BaseHead.astro'
+import Header from '../components/head/Header.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="mb-9 flex flex-col gap-y-14">
+			<slot />
+		</main>
+		<Footer />
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+		></script>
+	</body>
+</html>
