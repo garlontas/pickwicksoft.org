@@ -15,12 +15,12 @@ const posts = (await getCollection('blog')).sort(
 
 <ContentPage>
 	<Intro>
-		<h1 class="text-accent text-6xl">
+		<h1 class="text-accent mb-3 text-4xl sm:text-5xl md:text-6xl">
 			<span class="highlight">Go ahead and read</span> my latest blog posts about technology, open source,
 			freelancing and more.
 		</h1>
-		<div>
-			<Button href="/about" title="Who is writing this" />
+		<div class="mb-6">
+			<Button class="text-2xl sm:text-3xl" href="/about" title="Who is writing this" />
 		</div>
 	</Intro>
 	<SelectTag tags={posts.flatMap((post) => post.data.tags)} />

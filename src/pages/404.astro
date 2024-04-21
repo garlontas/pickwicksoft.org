@@ -1,0 +1,18 @@
+---
+import BaseHead from '../components/head/BaseHead.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<div class="flex h-screen w-screen flex-col justify-center bg-primary text-center">
+			<h1 class="text-accent text-[16rem] leading-normal text-white">404</h1>
+			<a href="/" class="text-accent text-3xl uppercase text-white underline"
+				>No need to worry, get home here.</a
+			>
+		</div>
+	</body>
+</html>

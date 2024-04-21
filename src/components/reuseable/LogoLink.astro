@@ -9,7 +9,9 @@ const { href, class: className, ...props } = Astro.props
 
 <h2 class:list={['text-accent w-min text-black', className]}>
 	<a class="" href={href}>
-		<p class="text-4xl"><span class:list={['text-primary', className]}>p</span>ickwicksoft.</p>
-		<p class="text-right text-xl leading-3">{SITE_SLOGAN}</p>
+		<p class="text-3xl md:text-4xl">
+			<span class:list={['text-primary', className]}>p</span>ickwicksoft.
+		</p>
+		<p class="text-right text-lg leading-3 md:text-xl">{SITE_SLOGAN}</p>
 	</a>
 </h2>

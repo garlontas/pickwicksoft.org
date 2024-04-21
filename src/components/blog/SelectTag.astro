@@ -4,10 +4,10 @@ tags = tags.filter((value, index, array) => array.indexOf(value) === index).sort
 tags.unshift('All')
 ---
 
-<div class="flex justify-end gap-3">
+<div class="flex justify-start gap-3 overflow-x-scroll sm:justify-end">
 	{
 		tags.map((tag) => (
-			<label class="cursor-pointer select-none px-3 py-2 hover:bg-violet-50 has-[:checked]:bg-primary has-[:checked]:bg-opacity-10">
+			<label class="shrink-0 cursor-pointer select-none text-nowrap px-3 py-2 hover:bg-violet-50 has-[:checked]:bg-primary has-[:checked]:bg-opacity-10">
 				<input type="radio" name="tags" value={tag} checked={tag === tags[0]} class="hidden" />
 				{tag}
 			</label>

@@ -1,0 +1,22 @@
+---
+import ContentPage from '../layouts/ContentPage.astro'
+import SectionHeading from '../components/reuseable/SectionHeading.astro'
+import ContactSection from '../components/contact/ContactSection.astro'
+---
+
+<ContentPage>
+	<div class="relative">
+		<div
+			class="absolute -right-4 -top-[200%] hidden h-[450%] w-1/3 bg-primary bg-opacity-10 md:block lxl:-right-24"
+		>
+		</div>
+		<div
+			class="absolute -right-4 -top-[200%] hidden h-[650%] w-1/4 bg-primary bg-opacity-10 md:block lxl:-right-24"
+		>
+		</div>
+		<div class="flex max-w-full flex-col gap-y-8 sm:max-w-4xl">
+			<SectionHeading title="Let’s work together." />
+		</div>
+	</div>
+	<ContactSection />
+</ContentPage>

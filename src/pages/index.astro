@@ -1,6 +1,4 @@
 ---
-import '@fontsource-variable/space-grotesk'
-import '@fontsource-variable/nunito'
 import Intro from '../components/reuseable/Intro.astro'
 import Projects from '../components/landing/Projects.astro'
 import BlogSnippets from '../components/landing/BlogSnippets.astro'
@@ -14,21 +12,21 @@ import ContentPage from '../layouts/ContentPage.astro'
 
 <ContentPage>
 	<Intro>
-		<h1 class="text-accent text-6xl">
+		<h1 class="text-accent text-5xl md:text-6xl">
 			<span class="highlight">Creative developer</span> and freelancer based in Munich.
 		</h1>
-		<p class="text-4xl leading-snug">
+		<p class="text-3xl leading-snug md:text-4xl">
 			Romanian freelancer, open source developer, creator of pystreamapi and student living in
 			Germany. Driven by my passion for good software I build client and open source software.
 		</p>
-		<div class="flex flex-col items-start gap-4 sm:flex-row">
-			<Button href="/about" title="More about me" action="primary" />
+		<div class="flex flex-row items-start gap-4 sm:flex-row">
+			<Button href="/about" title="More about me" action="primary" class="shrink-0" />
 			<div class="flex items-center gap-x-4">
-				<span class="h-[2px] w-16 bg-black"></span>
-				<SocialButton href="https://github.com/PickwickSoft/">
+				<span class="hidden h-[2px] w-16 bg-black sm:block"></span>
+				<SocialButton href="https://github.com/PickwickSoft/" class="hidden xs:block">
 					<Icon name="github" />
 				</SocialButton>
-				<SocialButton href="https://de.linkedin.com/in/stefan-garlonta">
+				<SocialButton href="https://de.linkedin.com/in/stefan-garlonta" class="hidden xxs:block">
 					<Icon name="linkedin" />
 				</SocialButton>
 			</div>

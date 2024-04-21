@@ -5,18 +5,18 @@ import SocialButton from '../reuseable/SocialButton.astro'
 import { Icon } from 'astro-icon/components'
 ---
 
-<div class="flex flex-col gap-9">
-	<div class="flex items-baseline justify-between">
+<div class="flex flex-col gap-3 md:gap-9">
+	<div class="flex flex-col items-baseline justify-between md:flex-row">
 		<SectionHeading title="Work with me." />
-		<p class="text-accent text-4xl text-primary">Start your project today!</p>
+		<p class="text-accent text-3xl text-primary md:text-4xl">Start your project today!</p>
 	</div>
-	<div class="flex items-end justify-between gap-3">
+	<div class="flex flex-col items-start justify-between gap-3 md:flex-row md:items-end">
 		<p class="max-w-2xl">
 			Get in touch so I can learn more about your business, your needs and project requirements. I
 			offer you a free call so I can offer you different solutions for your project. Don’t hesitate
 			too much because I have only limited availability! Just go ahead and contact me!
 		</p>
-		<div class="flex shrink-0 justify-center gap-9">
+		<div class="flex shrink-0 justify-center gap-3 md:gap-9">
 			<SocialButton href="https://de.linkedin.com/in/stefan-garlonta">
 				<Icon name="linkedin" />
 			</SocialButton>
