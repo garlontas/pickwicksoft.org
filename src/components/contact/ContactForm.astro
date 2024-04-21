@@ -4,7 +4,7 @@
 
 <form
 	id="form"
-	class="relative flex w-1/2 flex-col gap-9"
+	class="relative flex w-full flex-col gap-9 md:w-1/2"
 	method="POST"
 	data-netlify-recaptcha="true"
 	data-netlify="true"
@@ -14,6 +14,7 @@
 		<input
 			name="name"
 			autocomplete="false"
+			required
 			type="text"
 			class="w-full border-2 border-black text-lg focus:border-primary focus:bg-primary focus:bg-opacity-20 active:border-primary"
 		/>
@@ -23,15 +24,17 @@
 		<input
 			name="email"
 			autocomplete="true"
+			required
 			type="email"
 			class="w-full border-2 border-black text-lg focus:border-primary focus:bg-primary focus:bg-opacity-20 active:border-primary"
 		/>
 	</label>
-	<label class="min-h-48 pb-9 text-3xl">
+	<label class="text-3xl">
 		Message
 		<textarea
 			name="message"
-			class="h-full w-full border-2 border-black focus:border-primary focus:bg-primary focus:bg-opacity-20 active:border-primary"
+			required
+			class="box-border min-h-44 w-full border-2 border-black focus:border-primary focus:bg-primary focus:bg-opacity-20 active:border-primary"
 		></textarea>
 	</label>
 	<button
@@ -49,7 +52,8 @@
 			<p class="w-2/3 text-balance">
 				I’ll try to get back to you within 72 hours. You’ll receive an email from <a
 					href="mailto:contact@pickwicksoft.org"
-					class="text-primary">contact@pickwicksoft.org</a>
+					class="text-primary">contact@pickwicksoft.org</a
+				>
 			</p>
 		</div>
 	</div>
