@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content'
+import BlogList from '../../../components/blog/BlogList.astro'
+
+const { slug } = Astro.params
+const blogs = await getCollection('blog')
+const tags = blogs
+	.map((blog) => blog.data.tags)
+	.flat()
+	.reduce<{ [key: string]: number }>(function (result, c) {
+		const count = result[c] || 0
+		result[c] = count + 1
+		return result
+	}, {})
+export async function getStaticPaths() {
+	const blogs = await getCollection('blog')
+	return [...new Set(blogs.map((blog) => blog.data.tags).flat())].map((tag) => ({
+		params: { slug: tag }
+	}))
+}
+if (!slug) {
+	return Astro.redirect('/404')
+}
+const allBlogPostsWithTag = await getCollection('blog', (blog) =>
+	blog.data.tags.some((tag) => tag.toLowerCase() === slug.toLowerCase())
+)
+if (allBlogPostsWithTag.length === 0) {
+	return Astro.redirect('/404')
+}
+---
+
+<BlogList posts={allBlogPostsWithTag} tag={slug} />

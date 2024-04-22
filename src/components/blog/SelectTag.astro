@@ -1,16 +1,24 @@
 ---
-let { tags } = Astro.props
+let { tags, selectedTag } = Astro.props
 tags = tags.filter((value, index, array) => array.indexOf(value) === index).sort()
 tags.unshift('All')
+console.log(selectedTag)
 ---
 
-<div class="flex justify-start gap-3 overflow-x-scroll sm:justify-end">
+<div class="flex justify-start gap-3 overflow-x-scroll sm:justify-end md:overflow-hidden">
 	{
 		tags.map((tag) => (
-			<label class="shrink-0 cursor-pointer select-none text-nowrap px-3 py-2 hover:bg-violet-50 has-[:checked]:bg-primary has-[:checked]:bg-opacity-10">
-				<input type="radio" name="tags" value={tag} checked={tag === tags[0]} class="hidden" />
+			<a
+				href={tag.toLowerCase() == 'all' ? '/blog' : '/blog/tags/' + tag}
+				class:list={[
+					'shrink-0 cursor-pointer select-none text-nowrap px-3 py-2 hover:bg-violet-50',
+					selectedTag.toLowerCase() == tag.toLowerCase()
+						? 'bg-primary bg-opacity-10 hover:bg-primary hover:bg-opacity-10'
+						: ''
+				]}
+			>
 				{tag}
-			</label>
+			</a>
 		))
 	}
 </div>
