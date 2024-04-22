@@ -1,0 +1,37 @@
+---
+import generateToc from '../../util/generateToc'
+import TableOfContentsHeading from './TableOfContentsHeading.astro'
+const { headings } = Astro.props
+const toc = generateToc(headings)
+---
+
+<nav class="toc sticky top-9 order-2 hidden w-full !pl-0 text-gray-500 lg:block">
+	<ul class="grid gap-3 !pl-0">
+		{toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
+	</ul>
+</nav>
+<script>
+	addIntersectionObserver()
+
+	function addIntersectionObserver() {
+		const observer = new IntersectionObserver((headings) => {
+			headings.forEach((heading) => {
+				const id = heading.target.getAttribute('id')
+
+				// Get the link to this section's heading
+				const link = document.querySelector(`nav.toc li a[href="#${id}"]`)
+				if (!link) return
+
+				// Add/remove the .active class based on whether the
+				// section is visible
+				const addRemove = heading.intersectionRatio > 0 ? 'add' : 'remove'
+				link.classList[addRemove]('active')
+			})
+		})
+
+		// Observe all the sections of the article
+		document.querySelectorAll('article .prose h2, h3, h4, h5').forEach((section) => {
+			observer.observe(section)
+		})
+	}
+</script>

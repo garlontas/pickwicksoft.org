@@ -1,0 +1,23 @@
+---
+const { heading } = Astro.props
+---
+
+<li class="grid gap-3">
+	<a href={'#' + heading.slug}>
+		{heading.text}
+	</a>
+	{
+		heading.subheadings?.length > 0 && (
+			<ul class="grid gap-3 pl-8">
+				{heading.subheadings.map((subheading) => (
+					<Astro.self heading={subheading} />
+				))}
+			</ul>
+		)
+	}
+</li>
+<style>
+	.active {
+		@apply text-primary;
+	}
+</style>

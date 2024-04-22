@@ -1,0 +1,16 @@
+---
+import Link from '../reuseable/Link.astro'
+import TableOfContents from './TableOfContents.astro'
+const { headings } = Astro.props
+---
+
+<div class="flex max-w-64 grow-0 flex-col gap-2">
+	<img class="h-16 w-16 rounded-full" src="/blog-placeholder-5.jpg" alt="Stefan Garlonta" />
+	<p class="font-bold">Stefan Garlonta</p>
+	<p class="text-gray-500">
+		Romanian freelancer, open source developer and student living in Germany. Driven by my passion
+		for good software I build client and open source software.
+	</p>
+	<Link class="text-gray-500" href="/about" name="More about me" />
+	<TableOfContents headings={headings} />
+</div>
