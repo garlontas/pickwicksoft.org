@@ -4,13 +4,15 @@ import TableOfContents from './TableOfContents.astro'
 const { headings } = Astro.props
 ---
 
-<div class="flex max-w-64 grow-0 flex-col gap-2">
+<div class="flex min-w-52 max-w-64 flex-row gap-x-6 gap-y-2 md:flex-col">
 	<img class="h-16 w-16 rounded-full" src="/blog-placeholder-5.jpg" alt="Stefan Garlonta" />
-	<p class="font-bold">Stefan Garlonta</p>
-	<p class="text-gray-500">
-		Romanian freelancer, open source developer and student living in Germany. Driven by my passion
-		for good software I build client and open source software.
-	</p>
-	<Link class="mb-6 text-gray-500" href="/about" name="More about me" />
+	<div class="flex flex-col">
+		<p class="font-bold">Stefan Garlonta</p>
+		<p class="hidden text-gray-500 md:block">
+			Romanian freelancer, open source developer and student living in Germany. Driven by my passion
+			for good software I build client and open source software.
+		</p>
+		<Link class="mb-6 text-gray-500" href="/about" name="More about me" />
+	</div>
 	<TableOfContents headings={headings} />
 </div>

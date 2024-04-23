@@ -42,11 +42,6 @@ proprietary and open source software. Here are six reasons why:
 1. **Affordability:** You don't have to pay anything for it.
 2. **Trustworthiness:** The open source code doesn't contain unwanted trackers, malware and other functionalities
    endangering your privacy, data and operating system. As Linus Torvalds put in:
-
-   > **In real open source, you have the right to control your own destiny.**
-   >
-   > — Linus Torvalds
-
 3. **Security:** Because the software is being developed and used by large communities, there is always someone working
    on fixing security problems. In communities, security issues are often fixed faster and the users can enjoy really
    secure software.
@@ -56,6 +51,8 @@ proprietary and open source software. Here are six reasons why:
    with proprietary software.
 6. **Stability:** Because there is no pressure to release features in a short time, the source code is cleaner and the
    software has fewer bugs, making the user experience by far better.
+   > In real open source, you have the right to control your own destiny.<br>
+   > — <cite>Linus Torvalds</cite>
 
 ## Risks of using open source projects as the basis in proprietary software
 
@@ -84,9 +81,8 @@ The IT world would not be as modern and innovative as it is without this huge nu
 free time to create awesome software. In my opinion, you should accept it when large companies use your software for
 their commercial products because you have assumed the responsibility yourself.
 
-> **Most good programmers do programming not because they expect to get paid or get adulation by the public, but because
-> it is fun to program.**
->
-> — Linus Torvalds
+> Most good programmers do programming not because they expect to get paid or get adulation by the public, but because
+> it is fun to program.<br>
+> — <cite>Linus Torvalds</cite>
 
 This is also the reason PickwickSoft will continue to build open source software\!

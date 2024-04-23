@@ -26,7 +26,8 @@ const { title, description, pubDate, updatedDate, heroImage, tags, headings } = 
 					<div class="flex flex-col gap-6 pb-14">
 						<p>
 							<a class="text-primary" href="/">Home /</a><a class="text-primary" href="/blog">
-								Blog</a>
+								Blog</a
+							>
 						</p>
 						<div><SectionHeading class="highlight" title={title} /></div>
 						<div class="flex gap-6">
@@ -41,7 +42,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags, headings } = 
 						</div>
 					</div>
 				</Intro>
-				<div class="flex gap-9">
+				<div class="flex flex-col gap-x-9 gap-y-3 md:flex-row">
 					<BlogSideBox headings={headings} />
 					<slot />
 				</div>
