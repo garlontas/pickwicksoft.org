@@ -19,8 +19,16 @@ import Navigation from './Navigation.astro'
 		menuLink.addEventListener('click', () => {
 			menu.classList.toggle('open')
 		})
+
 		closeMenu.addEventListener('click', () => {
 			menu.classList.toggle('open')
+		})
+
+		// Add handler for links with /#id
+		document.querySelectorAll('a[href^="/#"]').forEach((link) => {
+			link.addEventListener('click', () => {
+				menu.classList.remove('open')
+			})
 		})
 	})
 </script>

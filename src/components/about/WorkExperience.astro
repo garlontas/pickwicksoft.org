@@ -67,3 +67,39 @@ const works = (await getCollection('work')).sort(
 		}
 	</div>
 </div>
+<script data-astro-rerun>
+	document.addEventListener('astro:page-load', function () {
+		const tabs = document.querySelectorAll('[role="tab"]')
+		const tabContents = document.querySelectorAll('[role="tabpanel"]')
+		if (tabs.length > 0) {
+			const firstTab = tabs[0] // Get the first tab
+
+			// Add the 'selected' class to the first tab and its content
+			firstTab.setAttribute('aria-selected', 'true')
+			tabContents[0].classList.remove('hidden')
+		}
+
+		tabs.forEach((tab) => {
+			tab.addEventListener('click', function () {
+				// Remove the 'hidden' class from all tab content
+				const tabContents = document.querySelectorAll('[role="tabpanel"]')
+				tabContents.forEach((content) => {
+					content.classList.add('hidden')
+				})
+
+				// Add the 'hidden' class to all tabs
+				tabs.forEach((t) => {
+					t.setAttribute('aria-selected', 'false')
+				})
+
+				// Set the clicked tab as selected
+				this.setAttribute('aria-selected', 'true')
+
+				// Show the corresponding tab content
+				const tabId = this.getAttribute('aria-controls')
+				const tabContent = document.getElementById(tabId)
+				tabContent.classList.remove('hidden')
+			})
+		})
+	})
+</script>
