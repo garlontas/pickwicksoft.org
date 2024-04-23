@@ -11,14 +11,16 @@ import Navigation from './Navigation.astro'
 </header>
 <Navigation />
 <script>
-	const menuLink = document.querySelector('[menu-link]')
-	const menu = document.querySelector('[menu]')
-	const closeMenu = document.querySelector('[close-menu]')
+	document.addEventListener('astro:page-load', () => {
+		const menuLink = document.querySelector('[menu-link]')
+		const menu = document.querySelector('[menu]')
+		const closeMenu = document.querySelector('[close-menu]')
 
-	menuLink.addEventListener('click', () => {
-		menu.classList.toggle('open')
-	})
-	closeMenu.addEventListener('click', () => {
-		menu.classList.toggle('open')
+		menuLink.addEventListener('click', () => {
+			menu.classList.toggle('open')
+		})
+		closeMenu.addEventListener('click', () => {
+			menu.classList.toggle('open')
+		})
 	})
 </script>

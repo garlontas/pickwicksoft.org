@@ -4,25 +4,47 @@ import HeaderLink from './HeaderLink.astro'
 
 <div
 	menu
-	class="menu text-accent fixed left-0 top-0 z-50 w-full overflow-hidden bg-primary p-4 transition-opacity duration-300 lg:px-6"
+	class="menu text-accent fixed left-0 top-0 z-50 w-full overflow-hidden bg-primary p-4 transition-all duration-300 lg:px-6"
 >
-	<div class="mx-auto flex max-w-7xl justify-end">
-		<button class="text-4xl text-white" close-menu>Close Menu</button>
-	</div>
-	<div class="flex h-full flex-col items-center justify-center gap-y-10">
-		<HeaderLink href="/" class="text-6xl text-white">home.</HeaderLink>
-		<HeaderLink href="/#projects" class="text-6xl text-white">projects.</HeaderLink>
-		<HeaderLink href="/blog" class="text-6xl text-white">blog.</HeaderLink>
-		<HeaderLink href="/about" class="text-6xl text-white">about me.</HeaderLink>
-		<HeaderLink href="/contact" class="text-6xl text-white">contact me.</HeaderLink>
+	<div class="relative top-0 h-full">
+		<div class="mx-auto flex max-w-7xl justify-end">
+			<button class="text-4xl text-white" close-menu>Close Menu</button>
+		</div>
+		<div class="mx-9 flex h-full flex-col items-start justify-center gap-y-10 md:mx-14 xl:mx-28">
+			<HeaderLink
+				href="/"
+				class="text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+				>home.</HeaderLink
+			>
+			<HeaderLink
+				href="/#projects"
+				class="text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+				>projects.</HeaderLink
+			>
+			<HeaderLink
+				href="/blog"
+				class="text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+				>blog.</HeaderLink
+			>
+			<HeaderLink
+				href="/about"
+				class="text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+				>about me.</HeaderLink
+			>
+			<HeaderLink
+				href="/contact"
+				class="text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+				>contact me.</HeaderLink
+			>
+		</div>
 	</div>
 </div>
 <style>
 	.menu {
-		@apply h-0 opacity-0;
+		@apply -top-8 h-0;
 	}
 
 	.menu.open {
-		@apply h-screen opacity-100;
+		@apply top-0 h-screen;
 	}
 </style>
