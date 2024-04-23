@@ -11,8 +11,6 @@ on a continuous basis. But did you know that these and many more companies are c
 
 ## What is open source software actually?
 
-![](/uploads/question-mark-2492009-1920.jpg)
-
 Open source software is computer software that is published and released under an open license with a copyright that
 allows users to use, view, change and often redistribute the software.
 
@@ -24,8 +22,6 @@ If you want to learn more about open source projects, check out this
 site: [Open Source Guides \| Learn how to launch and grow your project.](https://opensource.guide/)
 
 ## Open source projects: The engine of proprietary software
-
-![](/uploads/startup-594090-1920.jpg){: width="1920" height="1280"}
 
 Almost all proprietary products use open source libraries or tools behind the scenes. One of the best examples is the
 JavaScript NPM package [colors.js](https://github.com/Marak/colors.js). With almost 23 million downloads per week,
@@ -39,8 +35,6 @@ Without open source software, companies would have to spend much more money to d
 for free too.
 
 ## FOSS, the preferred software among users
-
-![](/uploads/security-265130-1920.jpg)
 
 FOSS (the acronym for: _free open source software_) is preferred among computer users when they have to choose between
 proprietary and open source software. Here are six reasons why:
@@ -64,8 +58,6 @@ proprietary and open source software. Here are six reasons why:
    software has fewer bugs, making the user experience by far better.
 
 ## Risks of using open source projects as the basis in proprietary software
-
-![](/uploads/investing-4013413-1920.jpg)
 
 While normal consumers will not face any risks when using FOSS, companies using FOSS for commercial projects do take a
 few risks.
