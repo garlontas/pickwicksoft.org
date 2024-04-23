@@ -14,7 +14,7 @@ const isActive = href === pathname || href === '/' + subpath?.[0]
 	href={href}
 	class:list={[
 		className,
-		{ 'line-through decoration-8': isActive },
+		{ 'line-through decoration-4 md:decoration-8': isActive },
 		'transition-300 transition-all hover:pl-6'
 	]}
 	{...props}
