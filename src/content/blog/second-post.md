@@ -2,7 +2,7 @@
 title: 'Introduction to Machine Learning with TensorFlow'
 description: 'Dive into the exciting world of machine learning with TensorFlow, one of the most popular deep learning frameworks. This blog post provides a beginner-friendly introduction to TensorFlow, covering its basic concepts and how to get started with building your first machine learning models.'
 pubDate: 'Jul 15 2022'
-heroImage: '/blog-placeholder-4.jpg'
+heroImage: './assets/blog-placeholder-4.jpg'
 tags: ['Programming']
 ---
 

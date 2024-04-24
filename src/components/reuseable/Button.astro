@@ -1,13 +1,16 @@
 ---
 const { href, title, action, class: className } = Astro.props
-const style = action === 'primary' ? 'bg-primary' : 'bg-black'
+const style =
+	action === 'primary' ? 'bg-primary hover:before:bg-black' : 'bg-black hover:before:bg-primary'
 ---
 
-<a
-	href={href}
-	class:list={[
-		'text-accent px-5 py-4 text-3xl font-bold text-white selection:text-white md:text-4xl',
-		style,
-		className
-	]}>{title}</a
->
+<div class="relative flex">
+	<a
+		href={href}
+		class:list={[
+			'text-accent px-5 py-4 text-3xl font-bold text-white selection:text-white before:absolute before:left-1 before:top-1 before:z-[-1] before:h-full before:w-full before:transition-all before:duration-100 md:text-4xl',
+			style,
+			className
+		]}>{title}</a
+	>
+</div>

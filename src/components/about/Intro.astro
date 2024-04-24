@@ -1,11 +1,19 @@
 ---
-
+import { Image } from 'astro:assets'
+import profile from '../../assets/profil.png'
 ---
 
 <div class="relative">
-	<div class="flex flex-col-reverse items-center gap-x-16 gap-y-9 sm:flex-row">
-		<img src="https://placehold.co/300x380" class="w-full" />
-		<h1 class="text-accent text-balance text-4xl sm:text-5xl md:text-6xl">
+	<div class="flex flex-col items-center gap-x-16 gap-y-9 md:flex-row">
+		<div class="flex w-full flex-row md:min-w-[200px] lg:min-w-[300px]">
+			<Image
+				src={profile}
+				alt="Stefan Garlonta"
+				widths={[300, 400, 600]}
+				class="h-full w-60 max-w-full rounded-full md:w-full md:rounded-none"
+			/>
+		</div>
+		<h1 class="text-accent shrink text-balance text-4xl xl:text-6xl">
 			<span class="highlight">High Innovation</span> is what really matters. I’m Stefan Garlonta and
 			exactly this is what I try to achieve with my work as a freelancer and as an open source developer.
 		</h1>

@@ -7,9 +7,10 @@ import AboutMe from '../components/about/AboutMe.astro'
 import WorkExperience from '../components/about/WorkExperience.astro'
 import Skills from '../components/about/Skills.astro'
 import WorkWithMe from '../components/about/WorkWithMe.astro'
+import { SITE_MAIN_TITLE } from '../consts'
 ---
 
-<ContentPage>
+<ContentPage title={'About me | ' + SITE_MAIN_TITLE}>
 	<Intro />
 	<AboutMe />
 	<WorkExperience />

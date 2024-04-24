@@ -2,6 +2,14 @@
 const { name, href, class: className } = Astro.props
 ---
 
-<a class:list={['font-bold', className]} href={href}>
-	<span class="highlight">{name}</span>
-</a>
+<div>
+	<a
+		class:list={[
+			'font-bold text-primary/80 underline decoration-primary/80 hover:text-primary hover:decoration-primary',
+			className
+		]}
+		href={href}
+	>
+		{name}
+	</a>
+</div>

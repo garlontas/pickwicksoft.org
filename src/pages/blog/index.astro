@@ -3,10 +3,14 @@ import '@fontsource-variable/space-grotesk'
 import '@fontsource-variable/nunito'
 import { getCollection } from 'astro:content'
 import BlogList from '../../components/blog/BlogList.astro'
+import ContentPage from '../../layouts/ContentPage.astro'
+import { SITE_MAIN_TITLE } from '../../consts'
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 )
 ---
 
-<BlogList posts={posts} tag="all" />
+<ContentPage title={'Blog | ' + SITE_MAIN_TITLE}>
+	<BlogList posts={posts} tag="all" />
+</ContentPage>

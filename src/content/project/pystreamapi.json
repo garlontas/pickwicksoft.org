@@ -2,5 +2,5 @@
 	"title": "pystreamapi",
 	"description": "The Python Stream API Library offering Streams like you know from Java/Kotlin/Scala in Python with some cool extensions.",
 	"tags": ["Open Source"],
-	"image": "/pystreamapi.jpeg"
+	"image": "./assets/pystreamapi.jpeg"
 }

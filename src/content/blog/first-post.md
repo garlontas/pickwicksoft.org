@@ -2,7 +2,7 @@
 title: '10 Essential Tips for Mastering Python Programming'
 description: 'In this blog post, well explore ten indispensable tips that will help you level up your Python programming skills. Whether youre a beginner or an experienced developer, these tips will enhance your proficiency and make your code cleaner, more efficient, and easier to maintain.'
 pubDate: 'Jul 08 2022'
-heroImage: '/blog-placeholder-3.jpg'
+heroImage: './assets/blog-placeholder-3.jpg'
 tags: ['Python']
 ---
 

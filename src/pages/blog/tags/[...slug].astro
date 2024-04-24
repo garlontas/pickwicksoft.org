@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content'
 import BlogList from '../../../components/blog/BlogList.astro'
+import { SITE_MAIN_TITLE } from '../../../consts'
+import ContentPage from '../../../layouts/ContentPage.astro'
 
 const { slug } = Astro.params
 const blogs = await getCollection('blog')
@@ -29,4 +31,6 @@ if (allBlogPostsWithTag.length === 0) {
 }
 ---
 
-<BlogList posts={allBlogPostsWithTag} tag={slug} />
+<ContentPage title={'Blogs: ' + slug + ' | ' + SITE_MAIN_TITLE}>
+	<BlogList posts={allBlogPostsWithTag} tag={slug} />
+</ContentPage>
