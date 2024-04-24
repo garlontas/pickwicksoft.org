@@ -19,11 +19,10 @@ const { project } = Astro.props
 	<p class="text-balance text-xl">{project.data.description}</p>
 	<Chips data={project.data.tags} />
 	<Image
-		src={project.data.image}
-		width="500px"
-		height="300px"
+		src={project.data.image.src}
 		alt={project.data.title}
-		quality="max"
+		width={500}
+		height={300}
 		class="h-auto w-full"
 	/>
 </div>

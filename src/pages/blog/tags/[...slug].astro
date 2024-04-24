@@ -6,7 +6,7 @@ import ContentPage from '../../../layouts/ContentPage.astro'
 
 const { slug } = Astro.params
 const blogs = await getCollection('blog')
-const tags = blogs
+blogs
 	.map((blog) => blog.data.tags)
 	.flat()
 	.reduce<{ [key: string]: number }>(function (result, c) {

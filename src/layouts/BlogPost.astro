@@ -8,10 +8,13 @@ import SectionHeading from '../components/reuseable/SectionHeading.astro'
 import FormattedDate from '../components/reuseable/FormattedDate.astro'
 import Intro from '../components/reuseable/Intro.astro'
 import BlogSideBox from '../components/blog/BlogSideBox.astro'
+import { MarkdownHeading } from 'astro'
 
-type Props = CollectionEntry<'blog'>['data']
-const { title, description, pubDate, updatedDate, heroImage, tags, headings, readingTime } =
-	Astro.props
+type Props = CollectionEntry<'blog'>['data'] & {
+	headings: MarkdownHeading[]
+	readingTime: Record<string, any>
+}
+const { title, description, pubDate, tags, headings, readingTime } = Astro.props
 ---
 
 <html lang="en">

@@ -1,6 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-type Props = CollectionEntry<'work'>
+interface Props {
+	work: CollectionEntry<'work'>
+}
 const { work } = Astro.props
 const { Content } = await work.render()
 ---

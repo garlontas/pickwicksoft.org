@@ -6,15 +6,15 @@ import Navigation from './Navigation.astro'
 <header class="absolute left-0 top-0 w-full bg-white">
 	<nav class="mx-auto flex max-w-7xl items-start justify-between p-4 lg:px-6">
 		<LogoLink href="/" />
-		<button class="text-accent z-10 text-3xl md:text-4xl" menu-link>Menu</button>
+		<button class="text-accent z-10 text-3xl md:text-4xl" id="menu-link">Menu</button>
 	</nav>
 </header>
 <Navigation />
 <script>
 	document.addEventListener('astro:page-load', () => {
-		const menuLink = document.querySelector('[menu-link]')
-		const menu = document.querySelector('[menu]')
-		const closeMenu = document.querySelector('[close-menu]')
+		const menuLink = document.querySelector('#menu-link')
+		const menu = document.querySelector('#menu')
+		const closeMenu = document.querySelector('#close-menu')
 
 		menuLink.addEventListener('click', () => {
 			menu.classList.toggle('open')
