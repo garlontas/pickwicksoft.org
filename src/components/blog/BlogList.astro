@@ -40,7 +40,7 @@ const tags = (await getCollection('blog')).flatMap((post) => post.data.tags)
 					<p class="mb-3 text-gray-500">
 						<FormattedDate date={post.data.pubDate} />
 					</p>
-					<div class="absolute -right-2 bottom-0 h-24 w-32 rounded-tl-full bg-primary bg-opacity-10" />
+					<div class="absolute -right-2 bottom-0 h-24 w-32 rounded-tl-full bg-primary/10" />
 				</a>
 			))
 		}

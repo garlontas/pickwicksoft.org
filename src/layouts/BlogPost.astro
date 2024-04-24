@@ -10,7 +10,8 @@ import Intro from '../components/reuseable/Intro.astro'
 import BlogSideBox from '../components/blog/BlogSideBox.astro'
 
 type Props = CollectionEntry<'blog'>['data']
-const { title, description, pubDate, updatedDate, heroImage, tags, headings } = Astro.props
+const { title, description, pubDate, updatedDate, heroImage, tags, headings, readingTime } =
+	Astro.props
 ---
 
 <html lang="en">
@@ -29,13 +30,17 @@ const { title, description, pubDate, updatedDate, heroImage, tags, headings } = 
 								Blog</a
 							>
 						</p>
-						<div><SectionHeading class="highlight" title={title} /></div>
-						<div class="flex gap-6">
-							<div class="flex items-baseline gap-3 text-gray-500">
+						<div><SectionHeading class="highlight inline" title={title} /></div>
+						<div class="flex flex-wrap gap-x-6 gap-y-2">
+							<div class="flex items-center gap-3 text-gray-500">
 								<Icon name="calendar" />
 								<span><FormattedDate date={pubDate} /></span>
 							</div>
-							<div class="flex items-baseline gap-3 text-gray-500">
+							<div class="flex items-center gap-3 text-gray-500">
+								<Icon name="clock" />
+								<span>{readingTime.minutesRead}</span>
+							</div>
+							<div class="flex items-center gap-3 text-gray-500">
 								<Icon name="tags" />
 								<span>{tags.join(', ')}</span>
 							</div>

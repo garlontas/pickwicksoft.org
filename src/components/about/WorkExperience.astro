@@ -18,14 +18,14 @@ const works = (await getCollection('work')).sort(
 			id="default-tab"
 			data-tabs-toggle="#default-tab-content"
 			role="tablist"
-			data-tabs-active-classes="bg-primary bg-opacity-10 text-black"
+			data-tabs-active-classes="bg-primary/10 text-black"
 			data-tabs-inactive-classes="bg-white text-black"
 		>
 			{
 				works.map((work) => (
 					<li role="presentation">
 						<button
-							class="inline-block px-3 py-2 !text-black hover:bg-violet-50 aria-selected:bg-primary aria-selected:bg-opacity-10 aria-selected:text-black"
+							class="inline-block px-3 py-2 !text-black hover:bg-violet-50 aria-selected:bg-primary/10 aria-selected:text-black"
 							id={work.slug + '-tab'}
 							data-tabs-target={'#' + work.slug}
 							type="button"

@@ -12,9 +12,7 @@ console.log(selectedTag)
 				href={tag.toLowerCase() == 'all' ? '/blog' : '/blog/tags/' + tag}
 				class:list={[
 					'shrink-0 cursor-pointer select-none text-nowrap px-3 py-2 hover:bg-violet-50',
-					selectedTag.toLowerCase() == tag.toLowerCase()
-						? 'bg-primary bg-opacity-10 hover:bg-primary hover:bg-opacity-10'
-						: ''
+					selectedTag.toLowerCase() == tag.toLowerCase() ? 'bg-primary/10 hover:bg-primary/10' : ''
 				]}
 			>
 				{tag}
