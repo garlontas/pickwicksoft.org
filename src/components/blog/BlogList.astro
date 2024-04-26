@@ -7,7 +7,9 @@ import FormattedDate from '../reuseable/FormattedDate.astro'
 import { Picture } from 'astro:assets'
 
 const { posts, tag } = Astro.props
-const tags = (await getCollection('blog')).flatMap((post) => post.data.tags)
+const tags = (await getCollection('blog', (blog) => blog.data.draft !== true)).flatMap(
+	(post) => post.data.tags
+)
 ---
 
 <Intro>

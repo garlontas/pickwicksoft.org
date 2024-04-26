@@ -5,7 +5,7 @@ import { SITE_MAIN_TITLE } from '../../../consts'
 import ContentPage from '../../../layouts/ContentPage.astro'
 
 const { slug } = Astro.params
-const blogs = await getCollection('blog')
+const blogs = await getCollection('blog', (blog) => blog.data.draft !== true)
 blogs
 	.map((blog) => blog.data.tags)
 	.flat()
@@ -15,7 +15,7 @@ blogs
 		return result
 	}, {})
 export async function getStaticPaths() {
-	const blogs = await getCollection('blog')
+	const blogs = await getCollection('blog', (blog) => blog.data.draft !== true)
 	return [...new Set(blogs.map((blog) => blog.data.tags).flat())].map((tag) => ({
 		params: { slug: tag }
 	}))

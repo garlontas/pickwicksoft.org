@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content'
 import FormattedDate from '../reuseable/FormattedDate.astro'
 import Link from '../reuseable/Link.astro'
 
-const posts = (await getCollection('blog'))
+const posts = (await getCollection('blog', (blog) => blog.data.draft !== true))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 4)
 ---

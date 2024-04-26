@@ -4,7 +4,7 @@ import BlogList from '../../components/blog/BlogList.astro'
 import ContentPage from '../../layouts/ContentPage.astro'
 import { SITE_MAIN_TITLE } from '../../consts'
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('blog', (blog) => blog.data.draft !== true)).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 )
 ---
