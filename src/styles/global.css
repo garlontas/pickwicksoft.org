@@ -63,9 +63,14 @@ html {
 	scroll-behavior: smooth;
 }
 
-[data-icon] path {
+[data-icon] use {
 	fill: white;
 }
-[social-link]:hover [data-icon] path {
+
+[social-link]:hover [data-icon] use {
 	fill: black;
+}
+
+svg path {
+	fill: currentColor;
 }
