@@ -10,13 +10,14 @@ import Navigation from './Navigation.astro'
 	</nav>
 </header>
 <Navigation />
-<script data-astro-rerun>
+<script is:inline>
 	document.addEventListener('astro:page-load', () => {
 		const menuLink = document.querySelector('#menu-link')
 		const menu = document.querySelector('#menu')
 		const closeMenu = document.querySelector('#close-menu')
 
 		menuLink.addEventListener('click', () => {
+			console.log('click')
 			menu.classList.toggle('open')
 		})
 
