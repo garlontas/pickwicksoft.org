@@ -21,7 +21,7 @@ const project = defineCollection({
 			title: z.string(),
 			description: z.string(),
 			tags: z.array(z.string()),
-			image: image()
+			heroImage: image().optional()
 		})
 })
 

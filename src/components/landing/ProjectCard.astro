@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
 import Line from '../reuseable/Line.astro'
 import Chips from '../reuseable/Chips.astro'
 
@@ -11,18 +11,20 @@ interface Props {
 const { project } = Astro.props
 ---
 
-<div class="flex flex-col gap-y-5 bg-primary bg-opacity-[15%] px-9 pt-5 sm:px-14">
+<div class="flex flex-col justify-between gap-y-5 bg-primary bg-opacity-[15%] px-9 pt-5 sm:px-14">
 	<div class="flex items-baseline gap-x-9">
 		<h3 class="text-4xl md:text-5xl">{project.data.title}</h3>
 		<Line />
 	</div>
 	<p class="text-balance text-xl">{project.data.description}</p>
 	<Chips data={project.data.tags} />
-	<Image
-		src={project.data.image.src}
+	<Picture
+		src={project.data.heroImage}
 		alt={project.data.title}
 		width={500}
 		height={300}
+		formats={['webp', 'avif']}
+		fallbackFormat="jpeg"
 		class="h-auto w-full"
 	/>
 </div>
