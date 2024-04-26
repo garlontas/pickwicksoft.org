@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content'
 import { Picture } from 'astro:assets'
 import Line from '../reuseable/Line.astro'
 import Chips from '../reuseable/Chips.astro'
+import { ImageMetadata } from 'astro'
 
 interface Props {
 	project: CollectionEntry<'project'>
@@ -19,7 +20,7 @@ const { project } = Astro.props
 	<p class="text-balance text-xl">{project.data.description}</p>
 	<Chips data={project.data.tags} />
 	<Picture
-		src={project.data.heroImage}
+		src={project.data.heroImage as ImageMetadata}
 		alt={project.data.title}
 		width={500}
 		height={300}

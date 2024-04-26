@@ -1,14 +1,16 @@
 ---
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
 import profile from '../../assets/profil.png'
 ---
 
 <div class="relative">
 	<div class="flex flex-col items-center gap-x-16 gap-y-9 md:flex-row">
 		<div class="flex w-full flex-row md:min-w-[200px] lg:min-w-[300px]">
-			<Image
+			<Picture
 				src={profile}
 				alt="Stefan Garlonta"
+				formats={['webp', 'avif']}
+				fallbackFormat="jpeg"
 				widths={[300, 400, 600]}
 				class="h-full w-60 max-w-full rounded-full md:w-full md:rounded-none"
 			/>

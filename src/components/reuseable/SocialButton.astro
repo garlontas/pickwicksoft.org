@@ -1,13 +1,15 @@
 ---
+import { Icon } from 'astro-icon/components'
 const { href, class: className } = Astro.props
 ---
 
 <div class="relative flex">
 	<a
+		social-link
 		href={href}
 		target="_blank"
 		class:list={[
-			'bg-black px-5 py-4 text-4xl text-white before:absolute before:left-1 before:top-1 before:z-[-1] before:h-full before:w-full before:transition-all before:duration-100 hover:before:bg-primary md:px-6 md:py-5',
+			'border-2 border-black bg-black px-5 py-4 text-4xl text-white transition-all duration-200 ease-in-out hover:bg-white hover:text-black md:px-6 md:py-5',
 			className
 		]}
 		aria-label="Social link"

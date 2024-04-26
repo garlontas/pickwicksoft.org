@@ -4,7 +4,7 @@ import Intro from '../reuseable/Intro.astro'
 import Button from '../reuseable/Button.astro'
 import SelectTag from './SelectTag.astro'
 import FormattedDate from '../reuseable/FormattedDate.astro'
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
 
 const { posts, tag } = Astro.props
 const tags = (await getCollection('blog')).flatMap((post) => post.data.tags)
@@ -25,16 +25,18 @@ const tags = (await getCollection('blog')).flatMap((post) => post.data.tags)
 		posts.map((post) => (
 			<a href={`/blog/${post.slug}/`} class="group relative flex flex-col gap-2">
 				<div class="w-full max-w-full overflow-hidden">
-					<Image
+					<Picture
 						src={post.data.heroImage}
 						alt={post.data.title}
 						width={post.data.heroImage.width / 3}
 						densities={[1.5, 2, 2.5, 3]}
+						formats={['webp', 'avif']}
+						fallbackFormat="jpeg"
 						class="w-full transition-all group-hover:scale-110"
 					/>
 				</div>
 				<p class="text-accent text-primary">{post.data.tags.join(', ')}</p>
-				<h3 class="text-xl font-bold group-hover:underline">{post.data.title}</h3>
+				<h2 class="text-xl font-bold group-hover:underline">{post.data.title}</h2>
 				<p class="line-clamp-4 group-hover:underline">{post.data.description}</p>
 				<p class="mb-3 text-gray-500">
 					<FormattedDate date={post.data.pubDate} />

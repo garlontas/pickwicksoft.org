@@ -62,3 +62,10 @@ img {
 html {
 	scroll-behavior: smooth;
 }
+
+[data-icon] path {
+	fill: white;
+}
+[social-link]:hover [data-icon] path {
+	fill: black;
+}
