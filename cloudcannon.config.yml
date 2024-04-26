@@ -1,6 +1,39 @@
+paths:
+  static:
 collections_config:
   blog:
     path: src/content/blog
     output: false
     url: /blog/[slug]
+    description: ''
+    icon: notes
+    _editables:
+    _inputs:
+    _select_data:
+    _structures:
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas:
+  project:
+    path: src/content/project
+    output: false
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  work:
+    path: src/content/work
+    output: false
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  skill:
+    path: src/content/skill
+    output: false
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
 timezone: Europe/Berlin
