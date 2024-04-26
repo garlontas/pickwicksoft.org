@@ -1,6 +1,17 @@
+paths:
+  static: public/
 collections_config:
   blog:
     path: src/content/blog
     output: false
     url: /blog/[slug]
+  project:
+    path: src/content/project
+    output: false
+  work:
+    path: src/content/work
+    output: false
+  skill:
+    path: src/content/skill
+    output: false
 timezone: Europe/Berlin
