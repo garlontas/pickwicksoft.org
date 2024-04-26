@@ -9,7 +9,7 @@
         path, rect { fill: #000; }
         .primary { fill: #4B0CDF; }
         @media (prefers-color-scheme: dark) {
-        path, rect { fill: #FFF; }
+        path, rect { fill: #FFF!important; }
         .primary { fill: #FFF; }
         }
     </style>

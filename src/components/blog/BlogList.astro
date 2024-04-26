@@ -30,7 +30,7 @@ const tags = (await getCollection('blog')).flatMap((post) => post.data.tags)
 						alt={post.data.title}
 						width={post.data.heroImage.width / 3}
 						densities={[1.5, 2, 2.5, 3]}
-						formats={['webp', 'avif']}
+						formats={['webp']}
 						fallbackFormat="jpeg"
 						class="w-full transition-all group-hover:scale-110"
 					/>
