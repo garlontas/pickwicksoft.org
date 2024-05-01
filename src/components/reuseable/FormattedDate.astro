@@ -5,15 +5,11 @@ interface Props {
 }
 
 const { date, hideDay } = Astro.props
-const dayConfig = hideDay ? {} : { day: 'numeric' }
+const dayConfig = hideDay
+	? { year: 'numeric', month: 'short' }
+	: { year: 'numeric', month: 'short', day: 'numeric' }
 ---
 
 <time datetime={date.toISOString()}>
-	{
-		date.toLocaleDateString('de-DE', {
-			year: 'numeric',
-			month: 'short',
-			...dayConfig
-		})
-	}
+	{date.toLocaleDateString('de-DE', dayConfig as Intl.DateTimeFormatOptions)}
 </time>
