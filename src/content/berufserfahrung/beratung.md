@@ -4,4 +4,6 @@ company: 'Verschiedene'
 position: 'It Berater'
 ---
 
-Seit August 2023 bin ich als IT-Berater und Programmierer für Privatkunden und auch kleine Unternehmen in der Busbranche tätig. Meine Aufgaben umfassen technische Beratung, Umsetzung neuer Anforderungen und das Modernisieren existierender Software.
+- IT-Beratung und Programmierung für Privatkunden und kleine Unternehmen
+- Branchen: Busunternehmen und Tourismus, Physiotherapie
+- Technische Beratung, Umsetzung neuer Anforderungen, Modernisierung existierender Software

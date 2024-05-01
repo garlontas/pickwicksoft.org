@@ -1,7 +1,11 @@
 ---
 startDate: 'Jan. 2023'
-company: 'CBROM'
+company: 'Rumänisch Orthodoxe Metropolie'
 position: 'Front- und Backend Developer'
 ---
 
-In den letzten zwei Jahren habe ich eine maßgeschneiderte Cloud-Softwarelösung für die Rumänische Orthodoxe Metropolie für Deutschland, Zentral- und Nordeuropa entwickelt. Die Webanwendung erlaubt das Verwalten der Warenbestände aller Gemeinden und bietet eine POS für den Shop im CBROM an. In Zukunft soll ein Online-Shop hinzukommen.
+- Entwurf und Architekturdesign eines Warenwirtschaftssystems
+- Entwicklung von Front- und Backend
+- Implementierung von Cloudlösung mit Restful API und Azure
+- Verwaltung der Warenbestände und Bestellungsabwicklung
+- Implementierung einer POS für den Shop im CBROM

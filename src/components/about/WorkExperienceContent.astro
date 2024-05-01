@@ -10,7 +10,7 @@ const { Content } = await work.render()
 <Content />
 <style is:global>
 	.work > ul {
-		@apply list-inside list-[square] marker:text-primary;
+		@apply list-outside list-[square] pl-5 marker:text-primary;
 	}
 
 	.work > p {
@@ -20,5 +20,9 @@ const { Content } = await work.render()
 	.work > p > br {
 		content: '';
 		@apply mb-1 block;
+	}
+
+	.work a {
+		@apply underline;
 	}
 </style>

@@ -52,6 +52,7 @@ const skill = defineCollection({
 	type: 'data',
 	schema: z.object({
 		name: z.string(),
+		germanName: z.string().optional(),
 		level: z.number(),
 		category: z.string()
 	})

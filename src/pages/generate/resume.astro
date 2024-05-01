@@ -1,12 +1,13 @@
 ---
+import { Image } from 'astro:assets'
 import { getCollection } from 'astro:content'
-import { PROFILE_SLOGAN, SITE_DESCRIPTION, SITE_TITLE } from '../../consts'
+import { Icon } from 'astro-icon/components'
+import { PROFILE_SLOGAN, SITE_DESCRIPTION } from '../../consts'
 import BaseHead from '../../components/head/BaseHead.astro'
 import profile from '../../assets/profil.png'
 import SkillsList from '../../components/about/SkillsList.astro'
 import WorkExperienceContent from '../../components/about/WorkExperienceContent.astro'
 import FormattedDate from '../../components/reuseable/FormattedDate.astro'
-import { Image } from 'astro:assets'
 
 let skills = await getCollection('skill')
 const works = (await getCollection('berufserfahrung')).sort(
@@ -19,12 +20,18 @@ const works = (await getCollection('berufserfahrung')).sort(
 	<head>
 		<BaseHead title="Stefan Garlonta Profil" description={SITE_DESCRIPTION} />
 	</head>
-	<body class="A4">
+	<body class="A4 relative">
+		<button
+			id="downloadBtn"
+			class="absolute right-9 top-0 flex items-center gap-x-2 bg-black px-4 py-2 text-white"
+		>
+			<Icon name="download" />Download
+		</button>
 		<section class="sheet padding-10mm">
 			<!-- Write HTML just like a web page -->
 			<article class="flex flex-col">
 				<div class="flex gap-x-9">
-					<div class="max-w-56 bg-primary/10">
+					<div class="min-w-[14rem] grow bg-primary/10">
 						<Image
 							class="mb-6 h-56 w-full object-cover object-top"
 							src={profile}
@@ -33,20 +40,20 @@ const works = (await getCollection('berufserfahrung')).sort(
 						/>
 						<div class="flex flex-col gap-6 px-3">
 							<div>
-								<p class="mb-2 text-base">Adalperostraße 22, 85737 Ismaning, Deutschland</p>
-								<a class="block text-base underline" href="tel:+4915750374406">+4915750374406</a>
-								<a class="block text-base underline" href="mailto:stefan@pickwicksoft.org"
+								<p class="mb-2 text-sm">Adalperostraße 22, 85737 Ismaning, Deutschland</p>
+								<a class="block text-sm underline" href="tel:+4915750374406">+4915750374406</a>
+								<a class="block text-sm underline" href="mailto:stefan@pickwicksoft.org"
 									>stefan@pickwicksoft.org</a
 								>
-								<a class="block text-base underline" href="https://www.pickwicksoft.org"
+								<a class="block text-sm underline" href="https://www.pickwicksoft.org"
 									>www.pickwicksoft.org</a
 								>
 							</div>
-							<div class="border-t-2 border-primary/50"></div>
+							<div class="border-t-2 border-primary"></div>
 							<div>
-								<h2 class="text-2xl font-bold uppercase">Kenntnisse</h2>
-								<div class="flex flex-col gap-y-1.5 pb-6">
-									<SkillsList skills={skills} compact={true} />
+								<h2 class="text-lg font-bold uppercase">Kenntnisse</h2>
+								<div class="flex flex-col gap-y-2 pb-6">
+									<SkillsList skills={skills} compact={true} german={true} />
 								</div>
 							</div>
 						</div>
@@ -55,31 +62,31 @@ const works = (await getCollection('berufserfahrung')).sort(
 						<div class="flex items-end justify-between">
 							<div>
 								<h1 class="text-4xl uppercase">Stefan<br /><b>Garlonta</b></h1>
-								<p class="text-balance text-base uppercase">{PROFILE_SLOGAN}</p>
+								<p class="text-balance text-sm uppercase">{PROFILE_SLOGAN}</p>
 							</div>
 							<div class="mb-1 flex w-1/2 flex-col gap-y-3">
 								<a href="https://github.com/garlontas" class="flex flex-col">
-									<p class="text-right text-base font-bold uppercase leading-[1rem]">GitHub</p>
-									<p class="text-right text-base leading-[1rem]">/garlontas</p>
+									<p class="text-right text-sm font-bold uppercase leading-[1rem]">GitHub</p>
+									<p class="text-right text-sm leading-[1rem]">/garlontas</p>
 								</a>
 								<a href="https://www.linkedin.com/in/stefan-garlonta/" class="flex flex-col">
-									<p class="text-right text-base font-bold uppercase leading-[1rem]">LinkedIn</p>
-									<p class="text-right text-base leading-[1rem]">/stefan-garlonta</p>
+									<p class="text-right text-sm font-bold uppercase leading-[1rem]">LinkedIn</p>
+									<p class="text-right text-sm leading-[1rem]">/stefan-garlonta</p>
 								</a>
 							</div>
 						</div>
-						<div class="border-t-2 border-primary/50"></div>
+						<div class="border-t-2 border-primary"></div>
 						<div>
-							<h2 class="text-2xl font-bold uppercase">Profil</h2>
-							<p class="text-justify text-base leading-snug">
-								Ich bin ein Freelancer, Open-Source-Entwickler und Student, der in München,
-								Deutschland, lebt. In meinen über 5 Jahren Erfahrung in der Softwareentwicklung habe
-								ich viele technologische Bereiche abgedeckt, von Kernbibliotheken über
+							<h2 class="text-lg font-bold uppercase">Profil</h2>
+							<p class="text-justify text-sm">
+								Ich bin ein Freelancer, Open-Source-Entwickler und Gymnasiast, der in München lebt.
+								In meinen über 4 Jahren Erfahrung in der Softwareentwicklung habe ich viele
+								technologische Bereiche abgedeckt, von Kernbibliotheken über
 								Linux-Desktopanwendungen bis hin zu Webanwendungen mit modernen Webtechnologien.
 							</p>
 						</div>
 						<div>
-							<h2 class="text-2xl font-bold uppercase">Berufserfahrung</h2>
+							<h2 class="text-lg font-bold uppercase">Berufserfahrung</h2>
 							<div class="relative flex flex-col gap-6">
 								<div class="absolute left-[1px] top-0 h-full w-[1px] bg-black"></div>
 								{
@@ -87,14 +94,14 @@ const works = (await getCollection('berufserfahrung')).sort(
 										<div>
 											<div class="border-l-[3px] border-black pl-3">
 												<div class="flex justify-between">
-													<h3 class="text-base font-bold uppercase">{work.data.position}</h3>
-													<p class="text-base italic text-gray-600">
+													<h3 class="text-sm font-bold uppercase">{work.data.position}</h3>
+													<p class="text-sm italic text-gray-600">
 														seit <FormattedDate date={work.data.startDate} hideDay={true} />
 													</p>
 												</div>
-												<p class="text-base italic">{work.data.company}</p>
+												<p class="text-sm italic">{work.data.company}</p>
 											</div>
-											<div class="pl-3 text-base leading-snug">
+											<div class="work pl-3 text-sm leading-snug">
 												<WorkExperienceContent work={work} />
 											</div>
 										</div>
@@ -103,12 +110,12 @@ const works = (await getCollection('berufserfahrung')).sort(
 							</div>
 						</div>
 						<div>
-							<h2 class="text-2xl font-bold uppercase">Ausbildung</h2>
+							<h2 class="text-lg font-bold uppercase">Ausbildung</h2>
 							<div class="flex justify-between">
-								<h3 class="text-base">Gymnasium Ismaning</h3>
-								<p class="text-base italic text-gray-600">vsl. 2026</p>
+								<h3 class="text-sm">Gymnasium Ismaning</h3>
+								<p class="text-sm italic text-gray-600">voraussichtl. 2026</p>
 							</div>
-							<p class="text-base italic">Abitur</p>
+							<p class="text-sm italic">Abitur</p>
 						</div>
 					</div>
 				</div>
@@ -230,10 +237,19 @@ const works = (await getCollection('berufserfahrung')).sort(
 					width: 357mm;
 				}
 			}
-
-			:global(ul) {
-				display: none;
-			}
 		</style>
-	</body>
+	</body><script>
+		document.getElementById('downloadBtn').addEventListener('click', () => {
+			// Hide the download button to avoid being included in the PDF
+			document.getElementById('downloadBtn').style.display = 'none'
+
+			// Trigger browser's print dialog
+			window.print()
+
+			// Show the download button after print dialog is closed
+			setTimeout(() => {
+				document.getElementById('downloadBtn').style.display = 'flex'
+			}, 100) // Adjust the delay if necessary
+		})
+	</script>
 </html>
