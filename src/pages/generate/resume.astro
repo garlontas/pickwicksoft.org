@@ -1,0 +1,238 @@
+---
+import { getCollection } from 'astro:content'
+import { PROFILE_SLOGAN, SITE_DESCRIPTION, SITE_TITLE } from '../../consts'
+import BaseHead from '../../components/head/BaseHead.astro'
+import profile from '../../assets/profil.png'
+import SkillsList from '../../components/about/SkillsList.astro'
+import WorkExperienceContent from '../../components/about/WorkExperienceContent.astro'
+import FormattedDate from '../../components/reuseable/FormattedDate.astro'
+import { Image } from 'astro:assets'
+
+let skills = await getCollection('skill')
+const works = (await getCollection('berufserfahrung')).sort(
+	(a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf()
+)
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="A4">
+		<section class="sheet padding-10mm">
+			<!-- Write HTML just like a web page -->
+			<article class="flex flex-col">
+				<div class="flex gap-x-9">
+					<div class="max-w-56 bg-primary/10">
+						<Image
+							class="mb-6 h-56 w-full object-cover object-top"
+							src={profile}
+							width="224px"
+							alt="Stefan Garlonta Profile Image"
+						/>
+						<div class="flex flex-col gap-6 px-3">
+							<div>
+								<p class="mb-2 text-base">Adalperostraße 22, 85737 Ismaning, Deutschland</p>
+								<a class="block text-base underline" href="tel:+4915750374406">+4915750374406</a>
+								<a class="block text-base underline" href="mailto:stefan@pickwicksoft.org"
+									>stefan@pickwicksoft.org</a
+								>
+								<a class="block text-base underline" href="https://www.pickwicksoft.org"
+									>www.pickwicksoft.org</a
+								>
+							</div>
+							<div class="border-t-2 border-primary/50"></div>
+							<div>
+								<h2 class="text-2xl font-bold uppercase">Kenntnisse</h2>
+								<div class="flex flex-col gap-y-1.5 pb-6">
+									<SkillsList skills={skills} compact={true} />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="flex flex-col gap-6">
+						<div class="flex items-end justify-between">
+							<div>
+								<h1 class="text-4xl uppercase">Stefan<br /><b>Garlonta</b></h1>
+								<p class="text-balance text-base uppercase">{PROFILE_SLOGAN}</p>
+							</div>
+							<div class="mb-1 flex w-1/2 flex-col gap-y-3">
+								<a href="https://github.com/garlontas" class="flex flex-col">
+									<p class="text-right text-base font-bold uppercase leading-[1rem]">GitHub</p>
+									<p class="text-right text-base leading-[1rem]">/garlontas</p>
+								</a>
+								<a href="https://www.linkedin.com/in/stefan-garlonta/" class="flex flex-col">
+									<p class="text-right text-base font-bold uppercase leading-[1rem]">LinkedIn</p>
+									<p class="text-right text-base leading-[1rem]">/stefan-garlonta</p>
+								</a>
+							</div>
+						</div>
+						<div class="border-t-2 border-primary/50"></div>
+						<div>
+							<h2 class="text-2xl font-bold uppercase">Profil</h2>
+							<p class="text-justify text-base leading-snug">
+								Ich bin ein Freelancer, Open-Source-Entwickler und Student, der in München,
+								Deutschland, lebt. In meinen über 5 Jahren Erfahrung in der Softwareentwicklung habe
+								ich viele technologische Bereiche abgedeckt, von Kernbibliotheken über
+								Linux-Desktopanwendungen bis hin zu Webanwendungen mit modernen Webtechnologien.
+							</p>
+						</div>
+						<div>
+							<h2 class="text-2xl font-bold uppercase">Berufserfahrung</h2>
+							<div class="relative flex flex-col gap-6">
+								<div class="absolute left-[1px] top-0 h-full w-[1px] bg-black"></div>
+								{
+									works.map((work) => (
+										<div>
+											<div class="border-l-[3px] border-black pl-3">
+												<div class="flex justify-between">
+													<h3 class="text-base font-bold uppercase">{work.data.position}</h3>
+													<p class="text-base italic text-gray-600">
+														seit <FormattedDate date={work.data.startDate} hideDay={true} />
+													</p>
+												</div>
+												<p class="text-base italic">{work.data.company}</p>
+											</div>
+											<div class="pl-3 text-base leading-snug">
+												<WorkExperienceContent work={work} />
+											</div>
+										</div>
+									))
+								}
+							</div>
+						</div>
+						<div>
+							<h2 class="text-2xl font-bold uppercase">Ausbildung</h2>
+							<div class="flex justify-between">
+								<h3 class="text-base">Gymnasium Ismaning</h3>
+								<p class="text-base italic text-gray-600">vsl. 2026</p>
+							</div>
+							<p class="text-base italic">Abitur</p>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
+	</body><style>
+		@page {
+			size: A4;
+			margin: 0;
+		}
+		body {
+			margin: 0;
+			-webkit-print-color-adjust: exact !important;
+			print-color-adjust: exact !important;
+		}
+		.sheet {
+			margin: 0;
+			overflow: hidden;
+			position: relative;
+			box-sizing: border-box;
+			page-break-after: always;
+		}
+
+		/** Paper sizes **/
+		body.A3 .sheet {
+			width: 297mm;
+			height: 419mm;
+		}
+		body.A3.landscape .sheet {
+			width: 420mm;
+			height: 296mm;
+		}
+		body.A4 .sheet {
+			width: 210mm;
+			height: 296mm;
+		}
+		body.A4.landscape .sheet {
+			width: 297mm;
+			height: 209mm;
+		}
+		body.A5 .sheet {
+			width: 148mm;
+			height: 209mm;
+		}
+		body.A5.landscape .sheet {
+			width: 210mm;
+			height: 147mm;
+		}
+		body.letter .sheet {
+			width: 216mm;
+			height: 279mm;
+		}
+		body.letter.landscape .sheet {
+			width: 280mm;
+			height: 215mm;
+		}
+		body.legal .sheet {
+			width: 216mm;
+			height: 356mm;
+		}
+		body.legal.landscape .sheet {
+			width: 357mm;
+			height: 215mm;
+		}
+
+		/** Padding area **/
+		.sheet.padding-5mm {
+			padding: 5mm;
+		}
+		.sheet.padding-10mm {
+			padding: 10mm;
+		}
+		.sheet.padding-15mm {
+			padding: 15mm;
+		}
+		.sheet.padding-20mm {
+			padding: 20mm;
+		}
+		.sheet.padding-25mm {
+			padding: 25mm;
+		}
+
+		/** For screen preview **/
+		@media screen {
+			body {
+				background: #e0e0e0;
+			}
+			.sheet {
+				background: white;
+				box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3);
+				margin: 5mm auto;
+			}
+		}
+
+		/** Fix for Chrome issue #273306 **/
+		@media print {
+			body.A3.landscape {
+				width: 420mm;
+			}
+			body.A3,
+			body.A4.landscape {
+				width: 297mm;
+			}
+			body.A4,
+			body.A5.landscape {
+				width: 210mm;
+			}
+			body.A5 {
+				width: 148mm;
+			}
+			body.letter,
+			body.legal {
+				width: 216mm;
+			}
+			body.letter.landscape {
+				width: 280mm;
+			}
+			body.legal.landscape {
+				width: 357mm;
+			}
+		}
+
+		:global(ul) {
+			display: none;
+		}
+	</style>
+</html>

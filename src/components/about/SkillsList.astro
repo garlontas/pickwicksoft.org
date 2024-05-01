@@ -1,0 +1,40 @@
+---
+import { type CollectionEntry } from 'astro:content'
+
+interface Props {
+	skills: CollectionEntry<'skill'>[]
+	compact?: boolean
+}
+const { skills, compact = false } = Astro.props
+let categories = Array.from(new Set(skills.map((skill) => skill.data.category)))
+let groupedSkills = categories.map((category) => ({
+	category,
+	items: skills
+		.filter((skill) => skill.data.category === category)
+		.sort((a, b) => b.data.level - a.data.level)
+}))
+groupedSkills = groupedSkills.sort((a, b) => b.items.length - a.items.length)
+---
+
+{
+	groupedSkills.map((category) => (
+		<div>
+			<h4 class:list={['mb-3 font-bold', compact ? 'hidden' : '']}>{category.category}</h4>
+			<div class:list={['flex flex-col gap-y-5', compact ? '!gap-y-1.5' : '']}>
+				{category.items.map((skill) => (
+					<div>
+						<h5 class:list={['mb-1 truncate', compact ? '!mb-0 !text-base' : '']}>
+							{skill.data.name}
+						</h5>
+						<div class:list={['h-3.5 w-full bg-primary/10', compact ? '!h-1' : '']}>
+							<div
+								class:list={['h-3.5 bg-primary', compact ? '!h-1' : '']}
+								style={'width: ' + skill.data.level + '%'}
+							/>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	))
+}

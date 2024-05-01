@@ -33,7 +33,18 @@ const work = defineCollection({
 		startDate: z.coerce.date(),
 		endDate: z.optional(z.coerce.date()),
 		company: z.string(),
-		technologies: z.array(z.string())
+		technologies: z.array(z.string()),
+		position: z.string()
+	})
+})
+
+const berufserfahrung = defineCollection({
+	type: 'content',
+	schema: z.object({
+		startDate: z.coerce.date(),
+		endDate: z.optional(z.coerce.date()),
+		company: z.string(),
+		position: z.string()
 	})
 })
 
@@ -46,4 +57,4 @@ const skill = defineCollection({
 	})
 })
 
-export const collections = { blog, project, work, skill }
+export const collections = { blog, project, work, skill, berufserfahrung }

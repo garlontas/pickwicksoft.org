@@ -2,38 +2,15 @@
 import { getCollection } from 'astro:content'
 import Link from '../reuseable/Link.astro'
 import SectionHeading from '../reuseable/SectionHeading.astro'
+import SkillsList from './SkillsList.astro'
 
 let skills = await getCollection('skill')
-let categories = Array.from(new Set(skills.map((skill) => skill.data.category)))
-let groupedSkills = categories.map((category) => ({
-	category,
-	items: skills
-		.filter((skill) => skill.data.category === category)
-		.sort((a, b) => b.data.level - a.data.level)
-}))
-groupedSkills = groupedSkills.sort((a, b) => b.items.length - a.items.length)
 ---
 
 <div>
 	<SectionHeading class="mb-9" title="Skills." />
 	<div class="mb-5 grid grid-cols-1 gap-9 sm:grid-cols-2 md:grid-cols-3">
-		{
-			groupedSkills.map((category) => (
-				<div>
-					<h4 class="mb-3 font-bold">{category.category}</h4>
-					<div class="flex flex-col gap-y-5">
-						{category.items.map((skill) => (
-							<div>
-								<h5 class="mb-1">{skill.data.name}</h5>
-								<div class="h-3.5 w-full bg-primary/10">
-									<div class="h-3.5 bg-primary" style={'width: ' + skill.data.level + '%'} />
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			))
-		}
+		<SkillsList skills={skills} />
 	</div>
-	<Link href="/resume/" name="Download resume" />
+	<Link href="/generate/resume/" name="Download resume" />
 </div>

@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 interface Props {
-	work: CollectionEntry<'work'>
+	work: CollectionEntry<'work'> | CollectionEntry<'berufserfahrung'>
 }
 const { work } = Astro.props
 const { Content } = await work.render()
