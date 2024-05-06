@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content'
 import { Icon } from 'astro-icon/components'
 import { PROFILE_SLOGAN, SITE_DESCRIPTION } from '../../consts'
 import BaseHead from '../../components/head/BaseHead.astro'
-import profile from '../../assets/profil.png'
+import profile from '../../assets/profile.png'
 import SkillsList from '../../components/about/SkillsList.astro'
 import WorkExperienceContent from '../../components/about/WorkExperienceContent.astro'
 import FormattedDate from '../../components/reuseable/FormattedDate.astro'
@@ -52,7 +52,7 @@ const works = (await getCollection('berufserfahrung')).sort(
 							<div class="border-t-2 border-primary"></div>
 							<div>
 								<h2 class="text-lg font-bold uppercase">Kenntnisse</h2>
-								<div class="flex flex-col gap-y-2 pb-6">
+								<div class="flex flex-col gap-y-2 pb-3">
 									<SkillsList skills={skills} compact={true} german={true} />
 								</div>
 							</div>
@@ -88,7 +88,7 @@ const works = (await getCollection('berufserfahrung')).sort(
 						<div>
 							<h2 class="text-lg font-bold uppercase">Berufserfahrung</h2>
 							<div class="relative flex flex-col gap-6">
-								<div class="absolute left-[1px] top-0 h-full w-[1px] bg-black"></div>
+								<div class="absolute left-[0.5px] top-0 h-full w-[1px] bg-black"></div>
 								{
 									works.map((work) => (
 										<div>
@@ -238,18 +238,19 @@ const works = (await getCollection('berufserfahrung')).sort(
 				}
 			}
 		</style>
-	</body><script>
-		document.getElementById('downloadBtn').addEventListener('click', () => {
-			// Hide the download button to avoid being included in the PDF
-			document.getElementById('downloadBtn').style.display = 'none'
+		<script>
+			document.getElementById('downloadBtn').addEventListener('click', () => {
+				// Hide the download button to avoid being included in the PDF
+				document.getElementById('downloadBtn').style.display = 'none'
 
-			// Trigger browser's print dialog
-			window.print()
+				// Trigger browser's print dialog
+				window.print()
 
-			// Show the download button after print dialog is closed
-			setTimeout(() => {
-				document.getElementById('downloadBtn').style.display = 'flex'
-			}, 100) // Adjust the delay if necessary
-		})
-	</script>
+				// Show the download button after print dialog is closed
+				setTimeout(() => {
+					document.getElementById('downloadBtn').style.display = 'flex'
+				}, 100) // Adjust the delay if necessary
+			})
+		</script>
+	</body>
 </html>

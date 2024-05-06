@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets'
-import profile from '../../assets/profil.png'
+import profile from '../../assets/profile.png'
 ---
 
 <div class="relative">
@@ -12,7 +12,7 @@ import profile from '../../assets/profil.png'
 				formats={['webp']}
 				fallbackFormat="jpeg"
 				widths={[300, 400, 600]}
-				class="h-full w-60 max-w-full rounded-full md:w-full md:rounded-none"
+				class="h-60 w-60 max-w-full rounded-full bg-primary/10 object-cover object-top md:h-full md:w-full md:rounded-none md:bg-white"
 			/>
 		</div>
 		<h1 class="text-accent shrink text-balance text-4xl xl:text-6xl">

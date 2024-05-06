@@ -4,7 +4,7 @@ company: 'Open Source'
 position: 'Open Source Entwickler'
 ---
 
+- Implementierung und Pflege von [**pystreamapi**](https://github.com/PickwickSoft/pystreamapi)
 - Open-Source-Projekte auf github.com/pickwicksoft
 - Projektmanagement und -koordination
 - Aufbau und Pflege von CI/CD-Pipelines
-- Pflege und Erweiterung von [**pystreamapi**](https://github.com/PickwickSoft/pystreamapi)

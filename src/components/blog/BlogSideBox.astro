@@ -2,7 +2,7 @@
 import { Picture } from 'astro:assets'
 import Link from '../reuseable/Link.astro'
 import TableOfContents from './TableOfContents.astro'
-import profile from '../../assets/profil.png'
+import profile from '../../assets/profile.png'
 const { headings } = Astro.props
 ---
 
@@ -10,10 +10,10 @@ const { headings } = Astro.props
 	<Picture
 		src={profile}
 		alt="Stefan Garlonta"
-		width="64"
+		width="128"
 		formats={['webp']}
 		fallbackFormat="jpeg"
-		class="h-16 w-16 rounded-full"
+		class="h-16 w-16 rounded-full bg-primary/10 object-cover object-top"
 	/>
 	<div class="mb-9 flex flex-col">
 		<p class="font-bold">Stefan Garlonta</p>

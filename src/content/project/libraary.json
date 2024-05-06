@@ -2,5 +2,5 @@
 	"title": "libraary",
 	"description": "A library management software for modern libraries running right in any browser! Browse, reserve, book and manage your books.",
 	"tags": ["Closed Source", "Work in progress"],
-	"heroImage": "./assets/pystreamapi.jpg"
+	"heroImage": "./assets/libraary.png"
 }
