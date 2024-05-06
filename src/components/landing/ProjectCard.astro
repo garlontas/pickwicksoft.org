@@ -12,20 +12,26 @@ interface Props {
 const { project } = Astro.props
 ---
 
-<div class="flex flex-col justify-between gap-y-5 bg-primary bg-opacity-[15%] px-9 pt-5 sm:px-14">
+<a
+	href={project.data.address}
+	target="_blank"
+	class="group flex flex-col justify-between gap-y-5 bg-primary bg-opacity-[15%] px-9 pt-5 sm:px-14"
+>
 	<div class="flex items-baseline gap-x-9">
 		<h3 class="text-4xl md:text-5xl">{project.data.title}</h3>
 		<Line />
 	</div>
 	<p class="text-balance text-xl">{project.data.description}</p>
 	<Chips data={project.data.tags} />
-	<Picture
-		src={project.data.heroImage as ImageMetadata}
-		alt={project.data.title}
-		width={1000}
-		height={600}
-		formats={['webp']}
-		fallbackFormat="jpeg"
-		class="h-auto w-full"
-	/>
-</div>
+	<div class="h-auto w-full overflow-hidden">
+		<Picture
+			src={project.data.heroImage as ImageMetadata}
+			alt={project.data.title}
+			width={1000}
+			height={600}
+			formats={['webp']}
+			fallbackFormat="jpeg"
+			class="h-auto w-full transition-all duration-500 group-hover:scale-110"
+		/>
+	</div>
+</a>
