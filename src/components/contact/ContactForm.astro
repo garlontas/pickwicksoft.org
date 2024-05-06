@@ -59,9 +59,23 @@
 	</div>
 </form>
 <script>
-	document.getElementById('form').addEventListener('submit', function (event) {
+	const handleSubmit = (event) => {
 		event.preventDefault()
-		const successMessage = document.getElementById('successMessage')
-		successMessage.classList.remove('hidden')
-	})
+
+		const myForm = event.target
+		const formData = new FormData(myForm)
+
+		fetch('/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: new URLSearchParams(formData).toString()
+		})
+			.then(() => {
+				const successMessage = document.getElementById('successMessage')
+				successMessage.classList.remove('hidden')
+			})
+			.catch((error) => alert(error))
+	}
+
+	document.querySelector('form').addEventListener('submit', handleSubmit)
 </script>
