@@ -2,7 +2,7 @@
 title: 'Why open source software is fundamental for  the whole IT world'
 description: 'Amazon, Apple, Google, Microsoft – These are the most famous of all companies that are creating proprietary software on a continuous basis. But did you know that these and many more companies are completely open source dependent?'
 pubDate: 'Dec 19 2023'
-heroImage: './assets/blog-placeholder-2.jpg'
+heroImage: './assets/blog-open-source.jpeg'
 tags: ['Open Source Software']
 ---
 

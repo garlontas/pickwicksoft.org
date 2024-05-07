@@ -75,7 +75,7 @@
 body {
 	font-family: 'Nunito Variable', sans-serif;
 	overflow-wrap: break-word;
-	@apply m-0 break-words bg-[100%_600px] p-0 text-left text-xl leading-7 text-black selection:bg-primary selection:bg-opacity-10 selection:text-black;
+	@apply m-0 break-words bg-[100%_600px] p-0 text-left text-xl leading-7 text-black selection:bg-[#ece6fc] selection:text-black;
 }
 
 main {
