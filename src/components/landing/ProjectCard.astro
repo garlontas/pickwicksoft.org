@@ -13,8 +13,8 @@ const { project } = Astro.props
 ---
 
 <a
-	href={project.data.address}
-	target="_blank"
+	href={project.data.address || '#'}
+	target={project.data.address ? '_blank' : '_self'}
 	class="group flex flex-col justify-between gap-y-5 bg-primary bg-opacity-[15%] px-9 pt-5 sm:px-14"
 >
 	<div class="flex items-baseline gap-x-9">
