@@ -34,7 +34,7 @@ const tags = (await getCollection('blog', (blog) => blog.data.draft !== true)).f
 						densities={[1.5, 2, 2.5, 3]}
 						formats={['webp']}
 						fallbackFormat="jpeg"
-						class="w-full transition-all group-hover:scale-110"
+						class="h-56 w-full object-cover object-center transition-all group-hover:scale-110"
 					/>
 				</div>
 				<p class="text-accent text-primary">{post.data.tags.join(', ')}</p>
