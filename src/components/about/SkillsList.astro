@@ -21,7 +21,7 @@ groupedSkills = groupedSkills.sort((a, b) => b.items.length - a.items.length)
 	groupedSkills.map((category) => (
 		<div>
 			<h4 class:list={['mb-3 font-bold', compact ? 'hidden' : '']}>{category.category}</h4>
-			<div class:list={['flex flex-col gap-y-5', compact ? 'mt-5 !gap-y-2' : '']}>
+			<div class:list={['flex flex-col gap-y-5', compact ? 'mt-4 !gap-y-2' : '']}>
 				{category.items.map((skill) => (
 					<div>
 						<h5 class:list={['mb-1 truncate', compact ? '!mb-0 !text-sm' : '']}>
