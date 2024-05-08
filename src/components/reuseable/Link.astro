@@ -1,5 +1,5 @@
 ---
-const { name, href, class: className } = Astro.props
+const { name, href, target, class: className } = Astro.props
 ---
 
 <div>
@@ -9,6 +9,7 @@ const { name, href, class: className } = Astro.props
 			className
 		]}
 		href={href}
+		target={target}
 	>
 		{name}
 	</a>
