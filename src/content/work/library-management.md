@@ -12,7 +12,7 @@ technologies:
   - Azure
 position: Front- and Backend Developer
 ---
-In the last 2 years I have developed a library management system for the library in the CBROM. The software tries to automate as much as possible of the administration work, so adding new books means just scanning an ISBN.
+In the last 3 years I have developed a library management system for the library in the CBROM. The software tries to automate as much as possible of the administration work, so adding new books means just scanning an ISBN.
 
 * Draft and architect library system design
 * Implement cloud solution with Restful API and Azure

@@ -11,7 +11,7 @@ technologies:
   - Azure
 position: Front- and Backend Developer
 ---
-In the last 2 years I have developed a custom software solution for the goods supply and inventory management department of the Metropolis of Germany, Central and North Europe. It includes inventory management, POS interface and in the future also an online shop. It is used in the church shop of CBROM.
+In the last 3 years I have developed a custom software solution for the goods supply and inventory management department of the Metropolis of Germany, Central and North Europe. It includes inventory management, POS interface and in the future also an online shop. It is used in the church shop of CBROM.
 
 * Solution design
 * Implementation of modern web application with both frontend and backend
