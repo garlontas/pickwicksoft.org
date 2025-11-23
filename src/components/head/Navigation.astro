@@ -4,36 +4,36 @@ import HeaderLink from './HeaderLink.astro'
 
 <div
 	id="menu"
-	class="menu text-accent fixed left-0 top-0 z-50 w-full overflow-hidden bg-primary p-4 transition-all duration-300 lg:px-6"
+	class="menu text-accent fixed left-0 top-0 z-50 w-full overflow-y-auto bg-primary p-4 transition-all duration-300 lg:px-6"
 >
 	<div class="relative top-0 h-full">
 		<div class="mx-auto flex max-w-7xl justify-end">
 			<button class="text-3xl text-white md:text-4xl" id="close-menu">Close Menu</button>
 		</div>
-		<div class="mx-9 flex h-full flex-col items-start justify-center gap-y-10 md:mx-14 xl:mx-28">
+		<div class="mx-9 flex h-full flex-col items-start justify-center gap-y-10 md:mx-14 xl:mx-28 pb-14">
 			<HeaderLink
 				href="/"
-				class="text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+				class="menu-link text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
 				>home.</HeaderLink
 			>
 			<HeaderLink
 				href="/#projects"
-				class="text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+				class="menu-link text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
 				>projects.</HeaderLink
 			>
 			<HeaderLink
 				href="/blog"
-				class="text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+				class="menu-link text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
 				>blog.</HeaderLink
 			>
 			<HeaderLink
 				href="/about"
-				class="text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+				class="menu-link text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
 				>about me.</HeaderLink
 			>
 			<HeaderLink
 				href="/contact"
-				class="text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+				class="menu-link text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
 				>contact me.</HeaderLink
 			>
 		</div>
@@ -41,10 +41,24 @@ import HeaderLink from './HeaderLink.astro'
 </div>
 <style>
 	.menu {
-		@apply -top-8 h-0;
+		@apply -top-28 h-0 pointer-events-none;
 	}
 
 	.menu.open {
-		@apply top-0 h-screen;
+		@apply top-0 h-screen pointer-events-auto;
 	}
+
+	.menu-link {
+  @apply transition-all duration-500 opacity-0 translate-y-4;
+}
+.menu.open .menu-link {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Stagger */
+.menu.open .menu-link:nth-child(1) { transition-delay: 0.05s; }
+.menu.open .menu-link:nth-child(2) { transition-delay: 0.1s; }
+.menu.open .menu-link:nth-child(3) { transition-delay: 0.15s; }
+.menu.open .menu-link:nth-child(4) { transition-delay: 0.2s; }
+.menu.open .menu-link:nth-child(5) { transition-delay: 0.25s; }
 </style>
