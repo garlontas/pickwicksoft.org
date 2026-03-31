@@ -1,16 +1,1 @@
-<svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect class="primary" width="4" height="36" rx="2" fill="#4B0CDF"/>
-    <rect class="primary" x="7" width="4" height="24" rx="2" fill="#4B0CDF"/>
-    <rect x="16.4944" y="0.000732422" width="4" height="36" rx="2" fill="black"/>
-    <path d="M23.4944 14C23.4944 12.8954 24.3898 12 25.4944 12C26.599 12 27.4944 12.8954 27.4944 14V34C27.4944 35.1046 26.599 36 25.4944 36C24.3898 36 23.4944 35.1046 23.4944 34V14Z" fill="black"/>
-    <rect x="30.4944" width="4" height="36" rx="2" fill="black"/>
-    <style>
-        svg { padding: 1px; }
-        path, rect { fill: #000; }
-        .primary { fill: #4B0CDF; }
-        @media (prefers-color-scheme: dark) {
-        path, rect { fill: #FFF!important; }
-        .primary { fill: #FFF; }
-        }
-    </style>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="36" fill="none" viewBox="0 0 35 36"><rect width="4" height="36" fill="#4B0CDF" class="primary" rx="2"/><rect width="4" height="24" x="7" fill="#4B0CDF" class="primary" rx="2"/><rect width="4" height="36" x="16.494" y=".001" fill="#000" rx="2"/><path fill="#000" d="M23.4944 14C23.4944 12.8954 24.3898 12 25.4944 12C26.599 12 27.4944 12.8954 27.4944 14V34C27.4944 35.1046 26.599 36 25.4944 36C24.3898 36 23.4944 35.1046 23.4944 34V14Z"/><rect width="4" height="36" x="30.494" fill="#000" rx="2"/><style>svg{padding:1px}path,rect{fill:#000}.primary{fill:#4b0cdf}@media (prefers-color-scheme:dark){path,rect{fill:#fff!important}.primary{fill:#fff}}</style></svg>
