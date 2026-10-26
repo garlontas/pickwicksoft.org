@@ -2,7 +2,7 @@
 title: Library Management
 startDate: Aug. 2022
 endDate: Aug. 2025
-company:
+company: –
 technologies:
   - Kotlin
   - Java
