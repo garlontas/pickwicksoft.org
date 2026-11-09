@@ -13,7 +13,7 @@ technologies:
   - SSG
 position: Open Source Developer
 ---
-In the last 5 years I have constantly created and updated existing open source projects. Currently I am maintaining my most popular repository on GitHub pystreamapi. I am open sourcing as much as I can because open source is what powers the technological world!
+In the last 6 years I have constantly created and updated existing open source projects. Currently I am maintaining my most popular repository on GitHub pystreamapi. I am open sourcing as much as I can because open source is what powers the technological world!
 
 * Setup and design of open source software.
 * Implementation and testing of an innovative library for Python.
